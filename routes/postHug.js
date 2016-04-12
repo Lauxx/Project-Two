@@ -37,7 +37,7 @@ router.route('/hugs')
 	})
 
 router.route('/hugs/:_id')
-//this route will allow you find a single hug post
+//this route will allow you find a single hug post by id
 	.get(function(req, res){
 		PostHug.findById({ _id: req.params._id }, function(err, hug){
 			if(err){
@@ -45,8 +45,34 @@ router.route('/hugs/:_id')
 			} else {
 				res.json(hug)
 			}
-		})
+		});
+	})
+
+//this route will allow you to edit a hug post by id
+	.put(function(req, res){
+		PostHug.findById({ _id: req.params._id }, function(err, update){
+			if(err){
+				res.status(500).send(err, "Something broke on PUTTING a single hug");
+			} else {
+				update.title = req.body.title ? req.body.title : update.title;
+				update.content = req.body.content ? req.body.content : update.content;
+				update.duration = req.body.duration ? req.body.duration : update.duration;
+
+				update.save(function(err, hug){
+					if (err){
+						res.status(500).send(err, "Something broke on saving an update on a single hug");
+					} else {
+						res.json(hug)
+					}
+				})
+			}
+		});
 	})
 
 
+
+
 module.exports = router;
+
+
+
