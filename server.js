@@ -11,8 +11,8 @@ var port = process.env.PORT || 8000;
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
-var Hug = require('./models/postHug');
-var hugRouter = require('./routes/postHug');
+var Hug = require('./models/hugs');
+var hugRouter = require('./routes/hugs');
 var User = require('./models/user');
 var userRouter = require('./routes/user_route');
 
