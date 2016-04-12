@@ -19,6 +19,11 @@ app.get('/', function (req, res){
 	res.render('index', {user: user});
 });
 
+app.get('/huggApp', function (req, res){
+	var user = req.user || " ";
+	res.render('huggApp', {user: user});
+});
+
 //new stuff for authentication; configuring out app to tell it to use passport
 app.use(session({
  secret: 'ilovescotchscotchyscotchscotch'
