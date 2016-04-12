@@ -1,19 +1,38 @@
+//	HugApp
+//	   NavBar
+//	   HomePage(Logo/Carousel/Quotes)
+//	   UserData
+//		 UserDisplayCard
+//	   UserFormData
+//	     UserUpdateForm
+//	   HugPostData
+//		 HugPostForm	
+//	   HugListData
+//		 HugList
+//		   HugCard
+//			 CommentList
+//			 CommentPostData
+//				CommentPostForm
+//	   Footer		
+
+
+
 
 var React = require('react');
 var ReactDom = require('react-dom');
 
 
 
-var App = React.createClass({
+var HugApp = React.createClass({
   render: function() {
     return (
       <div>
-        <h1> huiohi, world! </h1>
+        <h1> Hug world! </h1>
       </div>
       );
   }
 });
 
 ReactDom.render(
-  <App />, document.getElementById('app')
+  <HugApp />, document.getElementById('app')
 );
