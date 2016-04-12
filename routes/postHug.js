@@ -69,6 +69,17 @@ router.route('/hugs/:_id')
 		});
 	})
 
+//this route will alow you to delete a single hug post
+	.delete(function(req, res){
+		PostHug.remove({ _id: req.params._id }, function(err, hug){
+			if(err){
+				res.status(500).send(err, "Something broke on DELETING a single hug");
+			} else {
+				res.json({ message: 'hug post deleted!' })
+			}
+		});
+	})
+
 
 
 
