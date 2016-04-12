@@ -11,6 +11,11 @@ var port = process.env.PORT || 8000;
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
+var Hug = require('./models/postHug');
+var hugRouter = require('./routes/postHug');
+var User = require('./models/user');
+var userRouter = require('./routes/user_route');
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
@@ -47,7 +52,8 @@ app.use(function(req, res, next){
 	next();
 });
 
-
+app.use('/api', userRouter);
+app.use('/api', hugRouter);
 
 app.listen(port);
 console.log('winning on ' + port);
