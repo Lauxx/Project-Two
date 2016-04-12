@@ -36,5 +36,17 @@ router.route('/hugs')
 		});
 	})
 
+router.route('/hugs/:_id')
+//this route will allow you find a single hug post
+	.get(function(req, res){
+		PostHug.findById({ _id: req.params._id }, function(err, hug){
+			if(err){
+				res.status(500).send(err, "Something broke on getting a single hug");
+			} else {
+				res.json(hug)
+			}
+		})
+	})
+
 
 module.exports = router;
