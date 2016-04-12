@@ -19,15 +19,7 @@ var userRouter = require('./routes/user_route');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-app.get('/', function (req, res){
-	var user = req.user || " ";
-	res.render('index', {user: user});
-});
 
-app.get('/huggApp', function (req, res){
-	var user = req.user || " ";
-	res.render('huggApp', {user: user});
-});
 
 //new stuff for authentication; configuring out app to tell it to use passport
 app.use(session({
@@ -45,15 +37,20 @@ app.use(flash());
 require('./config/passport')(passport);
 // routes ======================================================================
 require('./routes/user.js')(app, passport);
+  
 
-app.use(function(req, res, next){
-	var user = req.user || 'no user';
-	console.log(user);
-	next();
+app.get('/', function (req, res){
+	var user = req.user || " ";
+	res.render('index', {user: user});
+});
+
+app.get('/huggApp', function (req, res){
+	var userr = req.user || " ";
+	console.log(userr, 'hello i am the user');
+	res.render('huggApp', {user: userr});
 });
 
 app.use('/api', userRouter);
 app.use('/api', hugRouter);
-
 app.listen(port);
 console.log('winning on ' + port);
