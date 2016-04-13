@@ -25,11 +25,13 @@ function HugList(props){
 	var hugs = props.hugArray.map(function(item){
 		
 		return <HugCard 
+							id = {item._id}
 							title = {item.title}
 							content = {item.content}
 							duration = {item.duration}
 							user = { item.user }
 							comments={item.comments}
+							loadHugsFromServer={props.loadHugsFromServer}
 							/>
 	})
 		return (
