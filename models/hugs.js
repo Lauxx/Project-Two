@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var PostHug = new Schema ({
+var Hug = new Schema ({
 	title: String,
 	content: String,
 	duration: String,
@@ -10,4 +10,4 @@ var PostHug = new Schema ({
 
 });
 
-module.exports = mongoose.model('Hug', PostHug);
+module.exports = mongoose.model('Hug', Hug);
