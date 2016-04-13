@@ -21,6 +21,8 @@ var React = require('react');
 
 var CommentList = require('./commentList');
 
+var CommentPostData = require('./commentPostData');
+
 var HugCard = React.createClass({
 
 	render: function(){
@@ -32,7 +34,7 @@ var HugCard = React.createClass({
 					<p>{this.props.content}</p>
 					<p>{this.props.duration}</p>
 					<CommentList comments={this.props.comments}/>
-					
+					<CommentPostData />
 				</div>
 			</div>
 			)
