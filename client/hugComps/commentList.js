@@ -19,24 +19,21 @@
 
 var React = require('react');
 
-var CommentList = require('./commentList');
-
-var HugCard = React.createClass({
-
-	render: function(){
+function CommentList(props){
+	var comments = props.comments.map(function(comm){
 		return (
 			<div>
-				<div className="container">
-				  <p>{this.props.user.local.username}</p>
-					<p>{this.props.title}</p>
-					<p>{this.props.content}</p>
-					<p>{this.props.duration}</p>
-					<CommentList comments={this.props.comments}/>
-					
-				</div>
+				<p>{comm.body}</p>
+				<p>{comm.date}</p>
+				<p>{comm.user.local.username}</p>
 			</div>
 			)
-	}
-});
+	})
+		return (
+			<div>
+				{comments}
+			</div>
+			)
+	};
 
-module.exports = HugCard;
+module.exports = CommentList;

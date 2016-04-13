@@ -28,7 +28,9 @@ router.route('/hugs')
 	})
 //this route will allow you to post a hug
 	.post(function(req, res){
+
 		var user_id = req.user ? req.user._id : "570c291724367ecc202e5d61";
+
 		var hug = new Hug();
 
 		hug.title = req.body.title;
@@ -102,7 +104,7 @@ router.route('/hugs/:_id/comments')
 	.post(function(req, res){
 
 		var user_id = req.user ? req.user._id : "570c291724367ecc202e5d61";
-		var comment = new Comments();
+		var comment = new Comment();
 
 		comment.body = req.body.body;
 		comment.user = req.user_id || "570c291724367ecc202e5d61";
