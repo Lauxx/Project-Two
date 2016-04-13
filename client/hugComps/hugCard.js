@@ -34,7 +34,7 @@ var HugCard = React.createClass({
 					<p>{this.props.content}</p>
 					<p>{this.props.duration}</p>
 					<CommentList comments={this.props.comments}/>
-					<CommentPostData />
+					<CommentPostData id={this.props.id} loadHugsFromServer={this.props.loadHugsFromServer}/>
 				</div>
 			</div>
 			)
