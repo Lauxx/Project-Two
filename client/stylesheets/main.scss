@@ -9,8 +9,16 @@
 	position: relative;
 	margin-bottom: 0;
 	padding: 3%;
+	max-height: 50px;
 }
 
 .comment-box{
 	margin-bottom: 3%;
 }
+
+.hugCard-flex{
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: flex-end;
+}
+

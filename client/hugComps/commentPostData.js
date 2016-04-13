@@ -5,10 +5,10 @@
 //	   HomePage(Logo/Carousel/Quotes)
 //	   UserData
 //		 UserDisplayCard
-//	   UserFormData
-//	     UserUpdateForm
-//	   HugPostData
-//		 HugPostForm	
+//	   	 UserFormData
+//	       UserUpdateForm
+//	     HugPostData
+//		   HugPostForm	
 //	   HugListData
 //		 HugList
 //		   HugCard

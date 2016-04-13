@@ -1,21 +1,21 @@
-//	HugApp
-//	   NavBar
-//	   UserAuth
-//	   HomePage(Logo/Carousel/Quotes)
-//	   UserData
-//		 UserDisplayCard
-//	   UserFormData
-//	     UserUpdateForm
-//	   HugPostData
-//		 HugPostForm	
-//	   HugListData
-//		 HugList
-//		   HugCard
-//			 CommentList
-//			 CommentPostData
-//				CommentPostForm
-//	   Footer
-
+//  HugApp
+//     NavBar
+//     UserAuth
+//     UserApp
+//     HomePage(Logo/Carousel/Quotes)
+//     UserData
+//       UserDisplayCard
+//       UserFormData
+//         UserUpdateForm
+//       HugPostData
+//         HugPostForm  
+//     HugListData
+//       HugList
+//         HugCard
+//           CommentList
+//           CommentPostData
+//              CommentPostForm
+//       Footer
 var React = require('react');
 
 var UserAuth = React.createClass({

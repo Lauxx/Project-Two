@@ -5,17 +5,17 @@
 //	   HomePage(Logo/Carousel/Quotes)
 //	   UserData
 //		 UserDisplayCard
-//	   UserFormData
-//	     UserUpdateForm
-//	   HugPostData
-//		 HugPostForm	
+//	   	 UserFormData
+//	       UserUpdateForm
+//	     HugPostData
+//		   HugPostForm	
 //	   HugListData
 //		 HugList
 //		   HugCard
 //			 CommentList
 //			 CommentPostData
 //				CommentPostForm
-//	   Footer	
+//		 Footer	
 
 var React = require('react');
 

@@ -5,10 +5,10 @@
 //	   HomePage(Logo/Carousel/Quotes)
 //	   UserData
 //		 UserDisplayCard
-//	   UserFormData
-//	     UserUpdateForm
-//	   HugPostData
-//		 HugPostForm	
+//	   	 UserFormData
+//	       UserUpdateForm
+//	     HugPostData
+//		   HugPostForm	
 //	   HugListData
 //		 HugList
 //		   HugCard
@@ -28,7 +28,7 @@ var HugCard = React.createClass({
 	render: function(){
 		return (
 			<div>
-				<div className="container">
+				<div className="container jumbotron col-xs-6">
 					<div className="completeHugPost">
 				  		<p><b>@{this.props.user.local.username}</b></p>
 						<p>Describe your hug: {this.props.title}</p>

@@ -5,17 +5,17 @@
 //	   HomePage(Logo/Carousel/Quotes)
 //	   UserData
 //		 UserDisplayCard
-//	   UserFormData
-//	     UserUpdateForm
-//	   HugPostData
-//		 HugPostForm	
+//	   	 UserFormData
+//	       UserUpdateForm
+//	     HugPostData
+//		   HugPostForm	
 //	   HugListData
 //		 HugList
 //		   HugCard
 //			 CommentList
 //			 CommentPostData
 //				CommentPostForm
-//	   Footer	
+//		 Footer
 
 
 var React = require('react');
@@ -41,7 +41,7 @@ var NavBar = React.createClass({
      		 		<ul className="nav navbar-nav navbar-right">
 						<li className="dropdown">
 							<a href="#" className="dropdown-toggle optima" 
-							data-toggle="dropdown">Login<span className="caret"></span></a>
+							data-toggle="dropdown">Login<span className=""></span></a>
 							<ul id="" className="dropdown-menu">
 								<li>
 									<div className="row">
@@ -63,7 +63,7 @@ var NavBar = React.createClass({
         				</li>
         				<li className="dropdown">
 							<a href="#" className="dropdown-toggle optima" 
-							data-toggle="dropdown">Sign Up<span className="caret"></span></a>
+							data-toggle="dropdown">Sign Up<span className=""></span></a>
 							<ul id="login-dp" className="dropdown-menu">
 								<li>
 									<div className="row">
