@@ -28,13 +28,15 @@ router.route('/hugs')
 	})
 //this route will allow you to post a hug
 	.post(function(req, res){
-		var user_id = req.user ? req.user._id : "570ea44052aa641708ebb144";
+
+		var user_id = req.user ? req.user._id : "570c291724367ecc202e5d61";
+
 		var hug = new Hug();
 
 		hug.title = req.body.title;
 		hug.content = req.body.content;
 		hug.duration = req.body.duration;
-		hug.user = req.user_id || "570ea44052aa641708ebb144";
+		hug.user = req.user_id || "570c291724367ecc202e5d61";
 
 		hug.save(function(err, hug){
 			if(err){
@@ -101,11 +103,11 @@ router.route('/hugs/:_id')
 router.route('/hugs/:_id/comments')
 	.post(function(req, res){
 
-		var user_id = req.user ? req.user._id : "570ea44052aa641708ebb144";
+		var user_id = req.user ? req.user._id : "570c291724367ecc202e5d61";
 		var comment = new Comment();
 
 		comment.body = req.body.body;
-		comment.user = req.user_id || "570ea44052aa641708ebb144";
+		comment.user = req.user_id || "570c291724367ecc202e5d61";
 		comment.hug = req.params._id;
 
 		comment.save(function(err, comment){
