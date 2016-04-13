@@ -20,14 +20,17 @@
 var React = require('react');
 
 var HugCard = React.createClass({
+
 	render: function(){
 		return (
 			<div>
 				<div className="container">
+					<p>{this.props.user.local.username}</p>
 					<p>{this.props.title}</p>
 					<p>{this.props.content}</p>
 					<p>{this.props.duration}</p>
-					<p>{this.props.user}</p>
+					<CommentList comments={this.props.comments}/>
+					
 				</div>
 			</div>
 			)

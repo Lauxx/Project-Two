@@ -1,4 +1,4 @@
-//	HugApp
+//	HugApp(index)
 //	   NavBar
 //	   UserAuth
 //	   UserApp

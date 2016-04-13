@@ -23,12 +23,13 @@ var HugCard = require('./hugCard');
 
 function HugList(props){
 	var hugs = props.hugArray.map(function(item){
+		
 		return <HugCard 
 							title = {item.title}
 							content = {item.content}
 							duration = {item.duration}
-							user = {item.user}
-							comments = {item.comments}
+							user = { item.user }
+							comments={item.comments}
 							/>
 	})
 		return (

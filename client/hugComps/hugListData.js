@@ -25,7 +25,6 @@ var HugListData = React.createClass({
 	getInitialState: function(){
 		return {
 			hugArray: [],
-			commentsArray: []
 		}
 	},
 

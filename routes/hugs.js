@@ -10,6 +10,7 @@ router.route('/hugs')
 //this route gets all hug posts
 	.get(function(req, res){
 		Hug.find()
+			.populate('user')
 			.populate({
 			path: 'comments',
 			populate: {
