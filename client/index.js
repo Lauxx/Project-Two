@@ -29,7 +29,7 @@ var Home = require('./home');
 var UserApp = require('./userApp');
 var HugListData = require('./hugComps/HugListData');
 
-
+require('./stylesheets/main.scss');
 
 var HugApp = React.createClass({
 	getInitialState: function(){

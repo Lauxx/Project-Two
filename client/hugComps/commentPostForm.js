@@ -23,7 +23,7 @@ var CommentPostForm = React.createClass({
 	render: function(){
 		return (
 			<div>
-		    <form className="col-xs-6" onSubmit={ this.props.handleCommentSubmit }>
+		    <form className="col-xs-4 comment-box" onSubmit={ this.props.handleCommentSubmit }>
 		        <fieldset className="form-group">
 		        <br/><br/>
 		       <label for="formGroupExampleInput2">Comment Content</label>

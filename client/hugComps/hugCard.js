@@ -29,10 +29,12 @@ var HugCard = React.createClass({
 		return (
 			<div>
 				<div className="container">
-				  <p>{this.props.user.local.username}</p>
-					<p>{this.props.title}</p>
-					<p>{this.props.content}</p>
-					<p>{this.props.duration}</p>
+					<div className="completeHugPost">
+				  		<p><b>@{this.props.user.local.username}</b></p>
+						<p>Describe your hug: {this.props.title}</p>
+						<p>Description of your hug: {this.props.content}</p>
+						<p>Total hug duration per person: {this.props.duration}</p>
+					</div>
 					<CommentList comments={this.props.comments}/>
 					<CommentPostData id={this.props.id} loadHugsFromServer={this.props.loadHugsFromServer}/>
 				</div>
