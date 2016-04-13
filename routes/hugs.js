@@ -29,7 +29,7 @@ router.route('/hugs')
 //this route will allow you to post a hug
 	.post(function(req, res){
 		var user_id = req.user ? req.user._id : "570c291724367ecc202e5d61";
-		var hug = new PostHug();
+		var hug = new Hug();
 
 		hug.title = req.body.title;
 		hug.content = req.body.content;
