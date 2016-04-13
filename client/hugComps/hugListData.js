@@ -9,9 +9,9 @@
 //	     UserUpdateForm
 //	   HugPostData
 //		 HugPostForm	
-//	   HugListData
+//	 **HugListData
 //		 HugList
-//		   HugCard
+//		   HugCard?
 //			 CommentList
 //			 CommentPostData
 //				CommentPostForm
