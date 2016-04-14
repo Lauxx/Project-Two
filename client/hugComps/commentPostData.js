@@ -41,7 +41,6 @@ var CommentPostData = React.createClass({
 				this.props.loadHugsFromServer();
 			}.bind(this),
 			error: function(xhr, status, err){
-				alert("Please sign up to leave comments!");
 				console.error('/api/hugs/' + this.props.id + '/comments', status, err.toString());
 			}.bind(this) 
 		})
