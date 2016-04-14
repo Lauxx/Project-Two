@@ -1,11 +1,12 @@
 //	HugApp
 //	   HomePage(Logo/Carousel/Quotes)
 //	   UserData
-//		 UserDisplayCard
-//	   	 UserFormData
-//	       UserUpdateForm
-//	     HugPostData
-//		   HugPostForm	
+//		 UserApp
+//		   UserDisplayCard
+//	   	   UserFormData
+//	        UserUpdateForm
+//	      HugPostData
+//		    HugPostForm	
 //	   HugListData
 //		 HugList
 //		   HugCard
@@ -46,3 +47,4 @@ var UserData = React.createClass({
 });
 
 module.exports = UserData;
+
