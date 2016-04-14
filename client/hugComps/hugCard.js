@@ -28,7 +28,7 @@ var HugCard = React.createClass({
 	render: function(){
 		return (
 			<div>
-				<div className="container jumbotron col-xs-6">
+				<div className="container">
 					<div className="completeHugPost">
 				  		<p><b>@{this.props.user.local.username}</b></p>
 						<p>Describe your hug: {this.props.title}</p>

@@ -28,6 +28,7 @@ var UserAuth = require('./userAuth');
 var Home = require('./home');
 var UserApp = require('./userApp');
 var HugListData = require('./hugComps/HugListData');
+import HugsMap from './mapComps/map'
 
 require('./stylesheets/main.scss');
 
@@ -66,6 +67,8 @@ var HugApp = React.createClass({
 
 
   render: function() {
+  	console.log("hello from hugs map");
+  	console.log(HugsMap);
     return (
       <div>
       	<UserAuth >
@@ -75,6 +78,7 @@ var HugApp = React.createClass({
       	</div>	
       	</UserAuth>
       	<HugListData />
+      	<HugsMap />
         <Footer />
       </div>
       );
