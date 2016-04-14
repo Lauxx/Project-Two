@@ -31,8 +31,8 @@ var HugApp = React.createClass({
   render: function() {
     return (
       <div>
-        <UserData/>
       	<Home />
+      	<UserData/>
       	<HugListData />
       	<HugsMap />
         <Footer />

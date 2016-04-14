@@ -15,17 +15,18 @@
 //				CommentPostForm
 //		 Footer
 
-var React = require('react');
-var UserDisplayCard = require('./userDisplayCard');
 
-var UserApp = React.createClass({
+var React = require('react');
+
+var UserDisplayCard = React.createClass({
 	render: function(){
 		return (
-			<div>
-			<UserDisplayCard user={ this.props.user }/>
+			<div className="container jumbotron">
+				<h1> Welcome {this.props.user.local.username}!</h1>
+				<img src={this.props.user.local.profileImage } height="60px" width="60px" />
 			</div>
 			)
 	}
 });
 
-module.exports = UserApp;
+module.exports = UserDisplayCard;
