@@ -21,6 +21,7 @@ var React = require('react');
 
 function CommentList(props){
 	var comments = props.comments.map(function(comm){
+		console.log(comm);
 		var user = comm.user && comm.user.local ? comm.user.local.username : 'no user';
 		return (
 			<div className="completeHugPost">

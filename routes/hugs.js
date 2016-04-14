@@ -102,14 +102,15 @@ router.route('/hugs/:_id')
 
 router.route('/hugs/:_id/comments')
 	.post(function(req, res){
-
+		
 		var user_id = req.user ? req.user._id : "570ea44052aa641708ebb144";
 		var comment = new Comment();
 
 		comment.body = req.body.body;
-		comment.user = req.user_id || "570ea44052aa641708ebb144";
+		comment.user = user_id;
 		comment.hug = req.params._id;
 
+		console.log(comment);
 		comment.save(function(err, comment){
 			if(err){
 				res.status(500).send(err, "Something broke on saving a comment");
