@@ -21,9 +21,7 @@ router.route('/user')
          }
        });
    } else {
-     res.json({
-       user: "anonymous"
-     })
+     res.json(null)
    }
 })
 

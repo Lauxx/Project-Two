@@ -23,6 +23,7 @@ var Footer = require('./footer');
 var Home = require('./home');
 var HugListData = require('./hugComps/HugListData');
 import HugsMap from './mapComps/map'
+var UserData = require('./userComps/userData');
 
 require('./stylesheets/main.scss');
 
@@ -30,8 +31,8 @@ var HugApp = React.createClass({
   render: function() {
     return (
       <div>
+        <UserData/>
       	<Home />
-      	
       	<HugListData />
       	<HugsMap />
         <Footer />
