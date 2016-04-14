@@ -34,7 +34,29 @@ module.exports = function(app, passport) {
    app.get('/logout', function(req, res){
     req.logout();
     res.redirect('/')
-   })
+   });
+
+   app.put('/api/user/:user_id', function(req, res){
+      console.log("TRYING TO PUTTTTT!!!!")
+        User.findById({_id: req.params.user_id}, function(err, user) {
+          if(err) {
+            console.log(err);
+          } else {
+            user.local.username = req.body.username ? req.body.username : user.local.username;
+            user.local.profileImage = req.body.profileImage ? req.body.profileImage : user.local.profileImage;
+            console.log("SUCCESS!!")
+            user.save(function(err, update){
+              if(err) {
+                console.log(err)
+              } else {
+                res.json(update);
+               
+              }
+            })
+          }
+        })
+      
+    });
 };
 
 
