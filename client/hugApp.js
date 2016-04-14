@@ -28,6 +28,7 @@ var UserData = require('./userComps/userData');
 require('./stylesheets/main.scss');
 
 var HugApp = React.createClass({
+
   render: function() {
     return (
       <div>

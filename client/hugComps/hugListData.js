@@ -45,7 +45,7 @@ var HugListData = React.createClass({
 	render: function(){
 		return (
 			<div>
-				<HugList hugArray={this.state.hugArray} loadHugsFromServer={this.loadHugsFromServer}/>
+				<HugList hugArray={this.state.hugArray} loadHugsFromServer={this.loadHugsFromServer} />
 			</div>
 			)
 	}

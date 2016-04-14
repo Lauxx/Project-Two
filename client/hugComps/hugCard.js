@@ -24,8 +24,28 @@ var CommentList = require('./commentList');
 var CommentPostData = require('./commentPostData');
 
 var HugCard = React.createClass({
+	getInitialState: function(){
+		return {
+			User: null
+		}
+	},
+
+	getCurrentUserFromServer: function(){
+		var self = this;
+		$.ajax({
+			url: '/api/user',
+			method: 'GET'
+		}).done(function(data){
+			self.setState({ user: data })
+		})
+	},
+
+	componentDidMount: function(){
+		this.getCurrentUserFromServer();
+	},
 
 	render: function(){
+		var commentForm = this.state.User ? <CommentPostData id={this.props.id} loadHugsFromServer={this.props.loadHugsFromServer}/> : null;
 		return (
 			<div>
 				<div className="container">
@@ -36,7 +56,7 @@ var HugCard = React.createClass({
 						<p>Total hug duration per person: {this.props.duration}</p>
 					</div>
 					<CommentList comments={this.props.comments}/>
-					<CommentPostData id={this.props.id} loadHugsFromServer={this.props.loadHugsFromServer}/>
+					{ commentForm }
 				</div>
 			</div>
 			)

@@ -38,8 +38,7 @@ var UserData = React.createClass({
 		this.getCurrentUserFromServer();
 	},
 
-	showUserDisplayComponent: function(){
-	},
+
 	render: function(){
 		return this.state.user ?  <UserApp user={ this.state.user } getCurrentUserFromServer={this.getCurrentUserFromServer}/> : null
 	}
