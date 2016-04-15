@@ -19,6 +19,7 @@
 var React = require('react');
 var UserDisplayCard = require('./userDisplayCard');
 var UserUpdateFormData = require('./userUpdateFormData');
+var HugPostData = require('./HugPostData');
 
 var UserApp = React.createClass({
 	getInitialState: function(){
@@ -45,6 +46,7 @@ var UserApp = React.createClass({
 		return (
 			<div>
 			 { this.showComp() }
+			 <HugPostData loadHugsFromServer={this.props.loadHugsFromServer} />
 			</div>
 			)
 	}

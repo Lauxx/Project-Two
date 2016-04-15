@@ -41,7 +41,7 @@ var UserData = React.createClass({
 
 
 	render: function(){
-		return this.state.user ?  <UserApp user={ this.state.user } getCurrentUserFromServer={this.getCurrentUserFromServer}/> : null
+		return this.state.user ?  <UserApp user={ this.state.user } getCurrentUserFromServer={this.getCurrentUserFromServer} loadHugsFromServer={this.props.loadHugsFromServer} /> : null
 	}
 });
 

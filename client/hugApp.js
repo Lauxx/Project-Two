@@ -31,12 +31,32 @@ require('./stylesheets/main.scss');
 
 var HugApp = React.createClass({
 
+  getInitialState: function(){
+    return {
+      hugArray: [],
+    }
+  },
+
+  loadHugsFromServer: function(){
+    var self = this;
+    $.ajax({
+      url: '/api/hugs',
+      method: 'GET'
+    }).done(function(data){
+      self.setState({ hugArray: data })
+    })
+  },
+
+  componentDidMount: function(){
+    this.loadHugsFromServer()
+  },
+
   render: function() {
     return (
       <div>
       	<Home />
-      	<UserData/>
-      	<HugListData />
+      	<UserData loadHugsFromServer={this.loadHugsFromServer} />
+      	<HugListData hugArray={this.state.hugArray} loadHugsFromServer={this.loadHugsFromServer} />
       	<HugsMap />
         <Footer />
       </div>
