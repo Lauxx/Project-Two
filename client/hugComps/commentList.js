@@ -1,30 +1,27 @@
-//	HugApp
-//	   HomePage(Logo/Carousel/Quotes)
-//	   UserData
-//		 UserApp
-//		   UserDisplayCard
-//	   	   UserFormData
-//	        UserUpdateForm
-//	      HugPostData
-//		    HugPostForm	
-//	   HugListData
-//		 HugList
-//		   HugCard
-//			 CommentList
-//			 CommentPostData
-//				CommentPostForm
-//		 Footer
-
+//  HugApp
+//     HomePage(Logo/Carousel/Quotes)
+//     UserApp
+//       UserDisplayCard
+//         UserFormData
+//          UserUpdateForm
+//        HugPostData
+//        HugPostForm 
+//     HugListData
+//     HugList
+//       HugCard
+//       CommentList
+//       CommentPostData
+//        CommentPostForm
+//     Footer
 
 var React = require('react');
 
 var CommentList = React.createClass({
-	deleteComment: function(yellow){
-		console.log(yellow);
+	deleteComment: function(id){
 		if(confirm('Are you sure you want to delete your comment?')){
 			var self = this;
 			$.ajax({
-				url: '/api/hugs/comment/' + yellow,
+				url: '/api/hugs/comment/' + id,
 				method: 'DELETE'
 			}).done(function(){
 				self.props.loadHugsFromServer();
@@ -39,7 +36,6 @@ var CommentList = React.createClass({
 		//console.log(comm);
 		return (
 			<div>
-				<h4> Comments: </h4>
 				<div className="container col-xs-10 col-xs-offset-1">
 					<div className="card">
   						<div className="card-block">

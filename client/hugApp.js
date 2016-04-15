@@ -1,6 +1,5 @@
 //  HugApp
 //     HomePage(Logo/Carousel/Quotes)
-//     UserData
 //     UserApp
 //       UserDisplayCard
 //         UserFormData
@@ -25,7 +24,7 @@ var Footer = require('./footer');
 var Home = require('./home');
 var HugListData = require('./hugComps/HugListData');
 import HugsMap from './mapComps/map'
-var UserData = require('./userComps/userData');
+var UserApp = require('./userComps/userApp');
 
 require('./stylesheets/main.scss');
 
@@ -34,6 +33,7 @@ var HugApp = React.createClass({
   getInitialState: function(){
     return {
       hugArray: [],
+      user: null
     }
   },
 
@@ -47,17 +47,29 @@ var HugApp = React.createClass({
     })
   },
 
+  getCurrentUserFromServer: function(){
+    var self = this;
+    $.ajax({
+      url: '/api/user',
+      method: 'GET'
+    }).done(function(data){
+      self.setState({ user: data })
+    })
+  },
+
   componentDidMount: function(){
-    this.loadHugsFromServer()
+    this.loadHugsFromServer();
+    this.getCurrentUserFromServer();
   },
 
   render: function() {
     var hugListData = this.state.hugArray ? <HugListData hugArray={this.state.hugArray} loadHugsFromServer={this.loadHugsFromServer} /> : null;
+    var userApp = this.state.user ?  <UserApp user={ this.state.user } getCurrentUserFromServer={this.getCurrentUserFromServer} loadHugsFromServer={this.loadHugsFromServer} /> : null
     return (
       <div>
       	<Home />
-      	<UserData loadHugsFromServer={this.loadHugsFromServer} />
-      	{ hugListData }
+      	{ userApp }
+      	{ hugListData } 
       	<HugsMap />
         <Footer />
       </div>
