@@ -9,7 +9,6 @@
     "clean": "rimraf static",
     "build:webpack": "NODE_ENV=production webpack --config webpack.config.prod.js",
     "build": "npm run clean && npm run build:webpack",
-    "start": "node server.js",
     "go": "npm run build && npm run start",
     "lint": "eslint client server || true"
   },
@@ -26,13 +25,12 @@
     "babel",
     "react-transform"
   ],
-  "license": "MIT",
+  "license": "ISC",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Lauxx/Project-Two.git"
   },
   "author": "",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/Lauxx/Project-Two/issues"
   },
@@ -49,14 +47,15 @@
     "express": "^4.13.4",
     "express-session": "^1.13.0",
     "material-ui": "^0.14.4",
+    "moment": "^2.12.0",
     "mongodb": "^2.0.46",
     "mongoose": "^4.4.12",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
     "react": "^0.14.7",
+    "react-dom": "^0.14.7",
     "react-google-maps": "^4.9.1",
     "react-tap-event-plugin": "^0.2.2",
-    "react-dom": "^0.14.7",
     "superagent": "^1.4.0",
     "xlsx": "^0.8.0"
   },

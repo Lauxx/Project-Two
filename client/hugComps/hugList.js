@@ -28,6 +28,7 @@ function HugList(props){
 							content = {item.content}
 							duration = {item.duration}
 							user = { item.user }
+							date = { item.date }
 							comments={item.comments}
 							loadHugsFromServer={props.loadHugsFromServer}
 							/>

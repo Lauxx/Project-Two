@@ -26,7 +26,7 @@ var UserDisplayCard = React.createClass({
 				<span className="glyphicon glyphicon-edit pencil"></span>
 				</a>
 				<h1> Welcome {this.props.user.local.username}!</h1>
-				<img src={this.props.user.local.profileImage } height="60px" width="60px" />
+				<img src={this.props.user.local.profileImage } className="img-thumbnail" alt="Cinque Terre" width="304" height="236"/>
 			</div>
 			)
 	}
