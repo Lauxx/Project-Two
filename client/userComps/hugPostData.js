@@ -62,6 +62,7 @@ var HugPostData = React.createClass({
 		hug.title = this.state.title.trim();
 		hug.content = this.state.content.trim();
 		hug.duration = this.state.duration.trim();
+
 		if(!title && !content && !duration){
 			return;
 		}
@@ -75,9 +76,9 @@ var HugPostData = React.createClass({
 		return (
 			<div>
 				<HugPostForm handleHugSubmit={this.handleHugSubmit}
-										 handleTitleChange={this.handleTitleChange}
-										 handleContentChange={this.handleContentChange}
-										 handleDurationChange={this.handleDurationChange}
+							handleTitleChange={this.handleTitleChange}
+							handleContentChange={this.handleContentChange}
+							handleDurationChange={this.handleDurationChange}
 										 />
 			</div>
 			)

@@ -36,7 +36,7 @@ router.route('/hugs')
 		hug.title = req.body.title;
 		hug.content = req.body.content;
 		hug.duration = req.body.duration;
-		hug.user = req.user_id || "570ea44052aa641708ebb144";
+		hug.user = user_id;
 
 		hug.save(function(err, hug){
 			if(err){

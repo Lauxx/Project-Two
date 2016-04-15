@@ -52,11 +52,12 @@ var HugApp = React.createClass({
   },
 
   render: function() {
+    var hugListData = this.state.hugArray ? <HugListData hugArray={this.state.hugArray} loadHugsFromServer={this.loadHugsFromServer} /> : null;
     return (
       <div>
       	<Home />
       	<UserData loadHugsFromServer={this.loadHugsFromServer} />
-      	<HugListData hugArray={this.state.hugArray} loadHugsFromServer={this.loadHugsFromServer} />
+      	{ hugListData }
       	<HugsMap />
         <Footer />
       </div>

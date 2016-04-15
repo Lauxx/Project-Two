@@ -45,7 +45,7 @@ var HugCard = React.createClass({
 
 	render: function(){
 		var commentForm = this.state.activeUser ? <CommentPostData id={this.props.id} loadHugsFromServer={this.props.loadHugsFromServer}/> : null;
-		var user = this.props.user.local ? this.props.user.local.username : 'no user';
+		var user = this.props.user && this.props.user.local ? this.props.user.local.username : 'no user';
 		return (
 			<div>
 				<div className="container col-xs-6 col-xs-offset-3">

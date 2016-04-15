@@ -21,7 +21,10 @@ var UserUpdateForm = React.createClass({
 	render: function(){
 		return (
 			<div>
-			
+			<a className="btn btn-default edit-button pencil" type="reset"
+				onClick={ this.props.toggleActiveComp.bind(null,'userDisplay') }>
+				<span className="glyphicon glyphicon-edit pencil"></span>
+			</a>
 			<form action="" onSubmit={ this.props.handleUserSubmit } role="form" >
 				<legend>Update your user status</legend>
 			
@@ -40,10 +43,7 @@ var UserUpdateForm = React.createClass({
 				<button type="submit" className="btn btn-primary">Submit</button>
 			</form>
 			<div>
-			<a className="btn btn-default edit-button pencil" type="reset"
-				onClick={ this.props.toggleActiveComp.bind(null,'userDisplay') }>
-				<span className="glyphicon glyphicon-edit pencil"></span>
-			</a>
+			
 			</div>
 			</div>
 			)
