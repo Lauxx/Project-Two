@@ -29,6 +29,18 @@ var HugPostData = React.createClass({
 		}
 	},
 
+	handleTitleChange: function(e){
+		this.setState({ title: e.target.value });
+	},
+
+	handleContentChange: function(e){
+		this.setState({ content: e.target.value });
+	},
+
+	handleDurationChange: function(e){
+		this.setState({ duration: e.target.value });
+	},
+
 	handleNewHugPost: function(hug){
 		$.ajax({
 			url: '/api/hugs',
@@ -50,22 +62,13 @@ var HugPostData = React.createClass({
 		hug.title = this.state.title.trim();
 		hug.content = this.state.content.trim();
 		hug.duration = this.state.duration.trim();
+		if(!title && !content && !duration){
+			return;
+		}
 
-		this.handleNewHugPost(hug);
+		this.handleNewHugPost({ title: title, content: content, duration: duration });
 		this.setState({ title: '', content: '', duration: '' });
 
-	},
-
-	handleTitleChange: function(e){
-		this.setState({ title: e.target.value });
-	},
-
-	handleContentChange: function(e){
-		this.setState({ content: e.target.value });
-	},
-
-	handleDurationChange: function(e){
-		this.setState({ duration: e.target.value });
 	},
 
 	render: function(){
