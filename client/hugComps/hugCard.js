@@ -59,6 +59,8 @@ var HugCard = React.createClass({
 		var commentForm = this.state.activeUser ? <CommentPostData id={this.props.id} loadHugsFromServer={this.props.loadHugsFromServer}/> : null;
 		var user = this.props.user && this.props.user.local ? this.props.user.local.username : 'no user';
 		var loggedInUser = this.state.activeUser && this.state.activeUser.local ? this.state.activeUser._id : loggedInUser;
+
+
 		 if(this.props.user._id === loggedInUser ){
 			return (
 				<div>
@@ -72,7 +74,9 @@ var HugCard = React.createClass({
   							<a className="btn btn-primary" onClick={ this.deleteHugPost.bind(null, this.props.id) }>Delete Post</a>
   						</div>
 					</div>
-					<CommentList comments={this.props.comments} loadHugsFromServer={this.props.loadHugsFromServer} />
+					<CommentList comments={this.props.comments} 
+								loadHugsFromServer={this.props.loadHugsFromServer} 
+								activeUser={ this.state.activeUser }/>
 					{ commentForm }
 				</div>
 			</div>
@@ -90,7 +94,9 @@ var HugCard = React.createClass({
   							
   						</div>
 					</div>
-					<CommentList comments={this.props.comments} loadHugsFromServer={this.props.loadHugsFromServer} />
+					<CommentList comments={this.props.comments} 
+								loadHugsFromServer={this.props.loadHugsFromServer} 
+								activeUser={ this.state.activeUser }/>
 					{ commentForm }
 				</div>
 			</div>

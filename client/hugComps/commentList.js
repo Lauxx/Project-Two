@@ -31,10 +31,12 @@ var CommentList = React.createClass({
 
 	render: function(){
 		var self = this;
+		var loggedInUser = this.props.activeUser && this.props.activeUser.local ? this.props.activeUser._id : loggedInUser;
 		var comments = this.props.comments.map(function(comm){
 		var user = comm.user && comm.user.local ? comm.user.local.username : 'no user';
-		//console.log(comm);
-		return (
+
+		if (comm.user._id === loggedInUser){
+			return (
 			<div>
 				<div className="container col-xs-10 col-xs-offset-1">
 					<div className="card">
@@ -49,7 +51,25 @@ var CommentList = React.createClass({
 				</div>	
 			</div>
 			)
-		});
+	} else {
+		return (
+			<div>
+				<div className="container col-xs-10 col-xs-offset-1">
+					<div className="card">
+  						<div className="card-block">
+  							<img src='' />
+    						<h4 className="card-title">@{user}</h4>
+    						<p className="card-text">{comm.body}</p>
+    						<p className="card-text"><small class="text-muted">{comm.date.substr(0,10)}</small></p>
+    						
+  						</div>
+					</div>
+				</div>	
+			</div>
+			)
+		}
+	});
+		
 
 		return (
 			<div>
