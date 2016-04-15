@@ -18,10 +18,25 @@
 
 var React = require('react');
 
-function CommentList(props){
-	var comments = props.comments.map(function(comm){
-		//console.log(comm);
+var CommentList = React.createClass({
+	deleteComment: function(yellow){
+		console.log(yellow);
+		if(confirm('Are you sure you want to delete your comment?')){
+			var self = this;
+			$.ajax({
+				url: '/api/hugs/comment/' + yellow,
+				method: 'DELETE'
+			}).done(function(){
+				self.props.loadHugsFromServer();
+			})
+		}
+	},
+
+	render: function(){
+		var self = this;
+		var comments = this.props.comments.map(function(comm){
 		var user = comm.user && comm.user.local ? comm.user.local.username : 'no user';
+		//console.log(comm);
 		return (
 			<div>
 				<h4> Comments: </h4>
@@ -32,17 +47,21 @@ function CommentList(props){
     						<h4 className="card-title">@{user}</h4>
     						<p className="card-text">{comm.body}</p>
     						<p className="card-text"><small class="text-muted">{comm.date.substr(0,10)}</small></p>
+    						<a className="btn btn-primary" onClick={self.deleteComment.bind(null, comm._id)}>Delete Comment</a>
   						</div>
 					</div>
 				</div>	
 			</div>
 			)
-	})
+		});
+
 		return (
 			<div>
 				{comments}
 			</div>
 			)
-	};
+	}
+});
+
 
 module.exports = CommentList;
