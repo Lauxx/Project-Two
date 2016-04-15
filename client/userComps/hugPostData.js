@@ -58,10 +58,9 @@ var HugPostData = React.createClass({
 	handleHugSubmit: function(e){
 		e.preventDefault();
 
-		var hug = {};
-		hug.title = this.state.title.trim();
-		hug.content = this.state.content.trim();
-		hug.duration = this.state.duration.trim();
+		var title = this.state.title.trim();
+		var content = this.state.content.trim();
+		var duration = this.state.duration.trim();
 
 		if(!title && !content && !duration){
 			return;
