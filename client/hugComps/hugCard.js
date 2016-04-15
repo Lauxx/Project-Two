@@ -55,10 +55,13 @@ var HugCard = React.createClass({
 	},
 
 	render: function(){
+		
 		var commentForm = this.state.activeUser ? <CommentPostData id={this.props.id} loadHugsFromServer={this.props.loadHugsFromServer}/> : null;
 		var user = this.props.user && this.props.user.local ? this.props.user.local.username : 'no user';
-		return (
-			<div>
+		var loggedInUser = this.state.activeUser && this.state.activeUser.local ? this.state.activeUser._id : loggedInUser;
+		 if(this.props.user._id === loggedInUser ){
+			return (
+				<div>
 				<div className="container col-xs-6 col-xs-offset-3">
 					<div className="card">
   						<div className="card-block">
@@ -73,7 +76,27 @@ var HugCard = React.createClass({
 					{ commentForm }
 				</div>
 			</div>
-			)
+				)
+		} else {
+			return (
+				<div>
+				<div className="container col-xs-6 col-xs-offset-3">
+					<div className="card">
+  						<div className="card-block">
+    						<h4 className="card-title">{this.props.title} from @{user}</h4>
+    						<p className="card-text">{this.props.content}</p>
+    						<p className="card-text"><small class="text-muted">{this.props.duration}</small></p> 
+    						<p className="card-text"><small class="text-muted">{this.props.date}</small></p>  						
+  							
+  						</div>
+					</div>
+					<CommentList comments={this.props.comments} loadHugsFromServer={this.props.loadHugsFromServer} />
+					{ commentForm }
+				</div>
+			</div>
+
+				)
+		}
 	}
 });
 
