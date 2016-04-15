@@ -66,10 +66,10 @@ var HugCard = React.createClass({
     						<h4 className="card-title">{this.props.title} from @{user}</h4>
     						<p className="card-text">{this.props.content}</p>
     						<p className="card-text"><small class="text-muted">{this.props.duration}</small></p>   						
-  							<a class="btn btn-primary" onClick={ this.deleteHugPost.bind(null, this.props.id) }>Delete Post</a>
+  							<a className="btn btn-primary" onClick={ this.deleteHugPost.bind(null, this.props.id) }>Delete Post</a>
   						</div>
 					</div>
-					<CommentList comments={this.props.comments}/>
+					<CommentList comments={this.props.comments} loadHugsFromServer={this.props.loadHugsFromServer} />
 					{ commentForm }
 				</div>
 			</div>
