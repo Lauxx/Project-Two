@@ -48,12 +48,13 @@ var HugCard = React.createClass({
 		var user = this.props.user.local ? this.props.user.local.username : 'no user';
 		return (
 			<div>
-				<div className="container">
-					<div className="completeHugPost">
-				  		<p><b>@{user}</b></p>
-						<p>Describe your hug: {this.props.title}</p>
-						<p>Description of your hug: {this.props.content}</p>
-						<p>Total hug duration per person: {this.props.duration}</p>
+				<div className="container col-xs-6 col-xs-offset-3">
+					<div className="card">
+  						<div className="card-block">
+    						<h4 className="card-title">{this.props.title} from @{user}</h4>
+    						<p className="card-text">{this.props.content}</p>
+    						<p className="card-text"><small class="text-muted">{this.props.duration}</small></p>
+  						</div>
 					</div>
 					<CommentList comments={this.props.comments}/>
 					{ commentForm }

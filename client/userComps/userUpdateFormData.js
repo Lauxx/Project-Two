@@ -68,6 +68,7 @@ var UserUpdateFormData = React.createClass({
 		return (
 			<div className="container">
 			<UserUpdateForm 
+				toggleActiveComp={ this.props.toggleActiveComp }
 				handleUserSubmit={ this.handleUserSubmit } 
 				handleUserNameChange={ this.handleUserNameChange }
 				handleProfileImageChange={ this.handleProfileImageChange }
