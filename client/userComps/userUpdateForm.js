@@ -40,8 +40,8 @@ var UserUpdateForm = React.createClass({
 				<button type="submit" className="btn btn-primary">Submit</button>
 			</form>
 			<div>
-			<a className="btn btn-default edit-button pencil" 
-				onClick={ this.props.toggleActiveComp.bind(null,'userUpdate') }>
+			<a className="btn btn-default edit-button pencil" type="reset"
+				onClick={ this.props.toggleActiveComp.bind(null,'userDisplay') }>
 				<span className="glyphicon glyphicon-edit pencil"></span>
 			</a>
 			</div>
