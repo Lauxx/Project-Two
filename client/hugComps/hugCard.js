@@ -29,6 +29,18 @@ var HugCard = React.createClass({
 		}
 	},
 
+	deleteHugPost: function(){
+		if(confirm('Are you sure you want to delete?')){
+			var self = this;
+			$.ajax({
+				url: '/api/hugs/' + this.props.id,
+				method: 'DELETE'
+			}).done(function(){
+				self.props.loadHugsFromServer();
+			})
+		}
+	},
+
 	getCurrentUserFromServer: function(){
 		var self = this;
 		$.ajax({
@@ -53,7 +65,7 @@ var HugCard = React.createClass({
   						<div className="card-block">
     						<h4 className="card-title">{this.props.title} from @{user}</h4>
     						<p className="card-text">{this.props.content}</p>
-    						<p className="card-text"><small class="text-muted">{this.props.duration}</small></p>
+    						<p className="card-text"><small class="text-muted">{this.props.duration}</small></p>   						
   						</div>
 					</div>
 					<CommentList comments={this.props.comments}/>
