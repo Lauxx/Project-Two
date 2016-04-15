@@ -1,12 +1,12 @@
 //	HugApp
 //	   HomePage(Logo/Carousel/Quotes)
 //	   UserData
-//		UserApp
-//		  UserDisplayCard
-//	   	  UserFormData
-//	       UserUpdateForm
-//	     HugPostData
-//		   HugPostForm	
+//		 UserApp
+//		   UserDisplayCard
+//	   	   UserFormData
+//	        UserUpdateForm
+//	      HugPostData
+//		    HugPostForm	
 //	   HugListData
 //		 HugList
 //		   HugCard
@@ -14,6 +14,7 @@
 //			 CommentPostData
 //				CommentPostForm
 //		 Footer
+
 
 
 var React = require('react');

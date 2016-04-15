@@ -1,12 +1,12 @@
 //	HugApp
 //	   HomePage(Logo/Carousel/Quotes)
 //	   UserData
-//		UserApp
-//		  UserDisplayCard
-//	   	  UserUpdateFormData
+//		 UserApp
+//		   UserDisplayCard
+//	   	   UserFormData
 //	        UserUpdateForm
-//	     HugPostData
-//		   HugPostForm	
+//	      HugPostData
+//		    HugPostForm	
 //	   HugListData
 //		 HugList
 //		   HugCard
@@ -14,6 +14,7 @@
 //			 CommentPostData
 //				CommentPostForm
 //		 Footer
+
 
 var React = require('react');
 var UserDisplayCard = require('./userDisplayCard');
