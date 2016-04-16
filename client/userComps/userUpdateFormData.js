@@ -46,6 +46,7 @@ var UserUpdateFormData = React.createClass({
 			data: userInfo,
 			success: function(data){
 				this.props.getCurrentUserFromServer();
+				this.props.loadHugsFromServer();
 			}.bind(this),
 			error: function(xhr, status, err){
 				console.error('/api/user/' + id, status, err.toString());

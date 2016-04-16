@@ -6,7 +6,7 @@ var Hug = new Schema ({
 	title: String,
 	content: String,
 	duration: String,
-	date: { type: Date, default: Date.now},
+	dayOfHug: String,
 	user: { type: mongoose.Schema.Types.ObjectId, ref: 'User'}, 
 	comments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment'}]
 

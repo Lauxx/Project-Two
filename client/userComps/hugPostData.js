@@ -24,7 +24,8 @@ var HugPostData = React.createClass({
 		return {
 			title: null,
 			content: null,
-			duration: null
+			duration: null,
+			dayOfHug: null
 		}
 	},
 
@@ -38,6 +39,10 @@ var HugPostData = React.createClass({
 
 	handleDurationChange: function(e){
 		this.setState({ duration: e.target.value });
+	},
+
+	handleDayOfHugChange: function(e){
+		this.setState({ dayOfHug: e.target.value })
 	},
 
 	handleNewHugPost: function(hug){
@@ -60,24 +65,25 @@ var HugPostData = React.createClass({
 		var title = this.state.title.trim();
 		var content = this.state.content.trim();
 		var duration = this.state.duration.trim();
+		var dayOfHug = this.state.dayOfHug.trim();
 
-		if(!title && !content && !duration){
+		if(!title && !content && !duration && !dayOfHug){
 			return;
 		}
 
-		this.handleNewHugPost({ title: title, content: content, duration: duration });
-		this.setState({ title: '', content: '', duration: '' });
+		this.handleNewHugPost({ title: title, content: content, duration: duration, dayOfHug: dayOfHug });
+		this.setState({ title: '', content: '', duration: '', dayOfHug: '' });
 
 	},
 
 	render: function(){
 		return (
 			<div>
-				<HugPostForm handleHugSubmit={this.handleHugSubmit}
-							handleTitleChange={this.handleTitleChange}
-							handleContentChange={this.handleContentChange}
-							handleDurationChange={this.handleDurationChange}
-										 />
+				<HugPostForm handleHugSubmit={ this.handleHugSubmit }
+							handleTitleChange={ this.handleTitleChange }
+							handleContentChange={ this.handleContentChange }
+							handleDurationChange={ this.handleDurationChange }
+							handleDayOfHugChange={ this.handleDayOfHugChange } />
 			</div>
 			)
 	}

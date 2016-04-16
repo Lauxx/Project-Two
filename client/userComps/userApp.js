@@ -19,6 +19,7 @@ var React = require('react');
 var UserDisplayCard = require('./userDisplayCard');
 var UserUpdateFormData = require('./userUpdateFormData');
 var HugPostData = require('./HugPostData');
+var UserToggle = require('./userToggle');
 
 var UserApp = React.createClass({
 	getInitialState: function(){
@@ -29,9 +30,13 @@ var UserApp = React.createClass({
 
 	showComp: function(){
 		if(this.state.activeComponent === 'userDisplay'){
-			return <UserDisplayCard user={ this.props.user } toggleActiveComp={ this.toggleActiveComp }/>
+			return <UserDisplayCard user={ this.props.user }/>
 		} else if(this.state.activeComponent === 'userUpdate'){
-			return <UserUpdateFormData user={ this.props.user } getCurrentUserFromServer={ this.props.getCurrentUserFromServer } toggleActiveComp={ this.toggleActiveComp }/>
+			return <UserUpdateFormData user={ this.props.user } 
+										getCurrentUserFromServer={ this.props.getCurrentUserFromServer }
+										loadHugsFromServer={this.props.loadHugsFromServer} />
+		} else if(this.state.activeComponent === 'hugPost'){
+			return <HugPostData loadHugsFromServer={this.props.loadHugsFromServer} />	
 		} else {
 			throw new Error('No active Component', this.state.activeComponent);
 		}
@@ -44,8 +49,8 @@ var UserApp = React.createClass({
 	render: function(){
 		return (
 			<div>
+			<UserToggle toggleActiveComp={ this.toggleActiveComp }/>
 			 { this.showComp() }
-			 <HugPostData loadHugsFromServer={this.props.loadHugsFromServer} />
 			</div>
 			)
 	}

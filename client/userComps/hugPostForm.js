@@ -21,17 +21,24 @@ var HugPostForm = React.createClass({
 		return (
 			<div className="container">
 				<form action="" onSubmit={this.props.handleHugSubmit} role="form">
-					<legend>Form title</legend>
+					<legend>Post your hug</legend>
 				
 					<div className="form-group">
-						<label for="">title</label>
+						<label for="">Give your hug a title: </label>
 						<input type="text" onChange={this.props.handleTitleChange} className="form-control" id="" placeholder="Input field" />
 					</div>
 
 					<div className="form-group">
-						<label for="">content</label>
+						<label for="">Tell everyone about it: </label>
 						<input type="text" onChange={this.props.handleContentChange} className="form-control" id="" placeholder="Input field" />
 					</div>
+
+
+					<div className="form-group">
+				      			<label className="legend">Choose a day to send some love: </label><br/>
+				         		<input type="date" onChange={ this.props.handleDayOfHugChange } id="input" className="form col-xs-3 date-input" data-date-format="mm/dd/yyyy"
+                     			required="required" title=""/><br/>
+				        </div>
 
 					<div className="form-group">
 						<label for="">duration</label>

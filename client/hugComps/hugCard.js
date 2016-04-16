@@ -69,8 +69,8 @@ var HugCard = React.createClass({
   						<div className="card-block">
     						<h4 className="card-title">{this.props.title} from @{user}</h4>
     						<p className="card-text">{this.props.content}</p>
-    						<p className="card-text"><small class="text-muted">{this.props.duration}</small></p> 
-    						<p className="card-text"><small class="text-muted">{this.props.date}</small></p>  						
+    						<p className="card-text"> When: {this.props.dayOfHug}</p>
+    						<p className="card-text"><small class="text-muted">{this.props.duration}</small></p>  						
   							<a className="btn btn-primary" onClick={ this.deleteHugPost.bind(null, this.props.id) }>Delete Post</a>
   						</div>
 					</div>
@@ -89,9 +89,8 @@ var HugCard = React.createClass({
   						<div className="card-block">
     						<h4 className="card-title">{this.props.title} from @{user}</h4>
     						<p className="card-text">{this.props.content}</p>
-    						<p className="card-text"><small class="text-muted">{this.props.duration}</small></p> 
-    						<p className="card-text"><small class="text-muted">{this.props.date}</small></p>  						
-  							
+    						<p className="card-text">When: {this.props.dayOfHug}</p>
+    						<p className="card-text"><small class="text-muted">{this.props.duration}</small></p>
   						</div>
 					</div>
 					<CommentList comments={this.props.comments} 

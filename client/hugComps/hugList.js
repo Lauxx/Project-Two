@@ -23,14 +23,15 @@ function HugList(props){
 	var hugs = props.hugArray.map(function(item){
 		
 		return <HugCard 
-							id = {item._id}
-							title = {item.title}
-							content = {item.content}
-							duration = {item.duration}
+							id = { item._id }
+							title = { item.title }
+							content = { item.content }
+							duration = { item.duration }
+							dayOfHug = { item.dayOfHug }
 							user = { item.user }
 							date = { item.date }
-							comments={item.comments}
-							loadHugsFromServer={props.loadHugsFromServer}
+							comments={ item.comments }
+							loadHugsFromServer={ props.loadHugsFromServer }
 							/>
 	})
 		return (

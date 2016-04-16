@@ -36,6 +36,7 @@ router.route('/hugs')
 		hug.title = req.body.title;
 		hug.content = req.body.content;
 		hug.duration = req.body.duration;
+		hug.dayOfHug = req.body.dayOfHug;
 		hug.user = user_id;
 
 		hug.save(function(err, hug){
@@ -77,6 +78,7 @@ router.route('/hugs/:_id')
 				update.title = req.body.title ? req.body.title : update.title;
 				update.content = req.body.content ? req.body.content : update.content;
 				update.duration = req.body.duration ? req.body.duration : update.duration;
+				update.dayOfHug = req.body.dayOfHug ? req.body.dayOfHug : update.dayOfHug;
 
 				update.save(function(err, hug){
 					if (err){
