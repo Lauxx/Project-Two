@@ -90,7 +90,7 @@ var HugCard = React.createClass({
     						<h4 className="card-title">{this.props.title} from @{user}</h4>
     						<p className="card-text">{this.props.content}</p>
     						<p className="card-text">When: {this.props.dayOfHug}</p>
-    						<p className="card-text"><small class="text-muted">{this.props.duration}</small></p>
+    						<p className="card-text"><small className="text-muted">{this.props.duration}</small></p>
   						</div>
 					</div>
 					<CommentList comments={this.props.comments} 
@@ -98,8 +98,7 @@ var HugCard = React.createClass({
 								activeUser={ this.state.activeUser }/>
 					{ commentForm }
 				</div>
-			</div>
-
+            </div>
 				)
 		}
 	}
