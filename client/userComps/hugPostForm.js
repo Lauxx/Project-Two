@@ -15,6 +15,7 @@
 //     Footer
 
 var React = require('react');
+var HugsMap = require('../mapComps/hugSubmit');
 
 var HugPostForm = React.createClass({
 	render: function (){
@@ -45,7 +46,7 @@ var HugPostForm = React.createClass({
 						<input type="text" onChange={this.props.handleDurationChange} className="form-control" id="" placeholder="Input field" />
 					</div>
 				
-				
+					<HugsMap/>
 					
 				
 					<button type="submit" className="btn btn-primary">Submit</button>

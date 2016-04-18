@@ -1,7 +1,7 @@
-import React from 'react'
-import ScriptjsLoader from 'react-google-maps/lib/async/ScriptjsLoader'
+var React = require('react');
+var ScriptjsLoader = require('react-google-maps/lib/async/ScriptjsLoader');
 
-export default (props) => {
+function MapLoader (props) {
   return (
     <ScriptjsLoader
       hostname={"maps.googleapis.com"}
@@ -24,3 +24,5 @@ export default (props) => {
     />
   )
 };  
+
+module.exports = MapLoader;

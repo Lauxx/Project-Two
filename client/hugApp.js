@@ -23,7 +23,7 @@ var ReactDom = require('react-dom');
 var Footer = require('./footer');
 var Home = require('./home');
 var HugListData = require('./hugComps/HugListData');
-import HugsMap from './mapComps/map'
+var HugsMap = require('./mapComps/map');
 var UserApp = require('./userComps/userApp');
 
 require('./stylesheets/main.scss');
