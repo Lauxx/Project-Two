@@ -15,7 +15,7 @@
 //     Footer
 
 var React = require('react');
-var NewHugsMap = require('../mapComps/map');
+var NewHugsMap = require('../mapComps/newHugMap');
 
 var HugPostForm = React.createClass({
 
