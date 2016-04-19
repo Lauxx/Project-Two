@@ -56,11 +56,16 @@ var UserUpdateFormData = React.createClass({
 
 	handleUserSubmit: function(e){
 		e.preventDefault();
+		var user={}
 
-		var username = this.state.username.trim();
-		var profileImage = this.state.profileImage;
+		user.username = this.state.username;
+		user.profileImage = this.state.profileImage;
 
-		this.handleUserFormSubmit({ username: username, profileImage: profileImage });
+		if(!user.username || !user.profileImage){
+			return;
+		}
+
+		this.handleUserFormSubmit(user);
 		this.setState({ username: '', profileImage: ''});
 	},
 

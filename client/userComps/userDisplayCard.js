@@ -22,7 +22,7 @@ var UserDisplayCard = React.createClass({
 		return (
 			<div className="container jumbotron">
 				<h1> Welcome {this.props.user.local.username}!</h1>
-				<img src={this.props.user.local.profileImage } className="img-thumbnail" alt="Cinque Terre" width="304" height="236"/>
+				<img src={this.props.user.local.profileImage } className="img-thumbnail"  width="304" height="236"/>
 			</div>
 			)
 	}

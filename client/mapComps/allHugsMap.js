@@ -24,6 +24,8 @@ var AllHugsMap = React.createClass({
 	},
 
 	modalDisplay: function(){
+
+
 		if(this.state.activeHug){
 			console.log(this.state.activeHug);
 		return (
@@ -33,7 +35,7 @@ var AllHugsMap = React.createClass({
           			onAfterOpen={this.afterOpenModal}
           			onRequestClose={this.closeModal}
           			style={customStyles} >
-
+          		<img src={ this.state.activeHug.user.local.profileImage } className="img-thumbnail"  width="304" height="236" />	
           		<h2 ref="subtitle">{this.state.activeHug.title}</h2>
           		<p> From @{ this.state.activeHug.user.local.username }</p>
           		<p> Content: { this.state.activeHug.content }</p>

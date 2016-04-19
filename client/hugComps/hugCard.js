@@ -57,7 +57,7 @@ var HugCard = React.createClass({
 		var commentForm = this.state.activeUser ? <CommentPostData id={this.props.id} loadHugsFromServer={this.props.loadHugsFromServer}/> : null;
 		var user = this.props.user && this.props.user.local ? this.props.user.local.username : 'no user';
 		var loggedInUser = this.state.activeUser && this.state.activeUser.local ? this.state.activeUser._id : loggedInUser;
-
+		var userImage = this.props.user && this.props.user.local ? this.props.user.local.profileImage : null;
 
 		 if(this.props.user._id === loggedInUser ){
 			return (
@@ -65,6 +65,7 @@ var HugCard = React.createClass({
 				<div className="col-xs-12 col-md-8 col-md-offset-2 col-lg-3">
 					<div className="card">
   						<div className="card-block">
+  							<img src={ userImage } className="img-thumbnail"  width="304" height="236"/>
     						<h4 className="card-title">{this.props.title} from @{user}</h4>
     						<p className="card-text">{this.props.content}</p>
     						<p className="card-text"> When: {this.props.dayOfHug}</p>
@@ -86,6 +87,7 @@ var HugCard = React.createClass({
 				<div className="col-xs-12 col-md-8 col-md-offset-2 col-lg-3">
 					<div className="card">
   						<div className="">
+  							<img src={ userImage } className="img-thumbnail"  width="304" height="236"/>
     						<h4 className="card-title">{this.props.title} from @{user}</h4>
     						<p className="card-text">{this.props.content}</p>
     						<p className="card-text">When: {this.props.dayOfHug}</p>
