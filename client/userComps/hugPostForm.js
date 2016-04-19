@@ -46,7 +46,7 @@ var HugPostForm = React.createClass({
 						<input type="text" onChange={this.props.handleDurationChange} className="form-control" id="" placeholder="Input field" />
 					</div>
 				
-			
+					<div className="col-xs-8" id="map"></div>
 					
 				
 					<button type="submit" className="btn btn-primary">Submit</button>
