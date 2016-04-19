@@ -37,6 +37,8 @@ router.route('/hugs')
 		hug.content = req.body.content;
 		hug.duration = req.body.duration;
 		hug.dayOfHug = req.body.dayOfHug;
+		hug.lat = req.body.lat;
+		hug.lng = req.body.lng;
 		hug.user = user_id;
 
 		hug.save(function(err, hug){

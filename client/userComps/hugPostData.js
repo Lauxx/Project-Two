@@ -25,8 +25,15 @@ var HugPostData = React.createClass({
 			title: null,
 			content: null,
 			duration: null,
-			dayOfHug: null
+			dayOfHug: null,
+			lat: 46.8787,
+			lng: -114.000
 		}
+	},
+
+	handleMarkerMoved: function(lat, lng) {
+		this.setState({ lat: lat, lng: lng })
+		console.log(lat, lng);
 	},
 
 	handleTitleChange: function(e){
@@ -44,6 +51,8 @@ var HugPostData = React.createClass({
 	handleDayOfHugChange: function(e){
 		this.setState({ dayOfHug: e.target.value })
 	},
+
+
 
 	handleNewHugPost: function(hug){
 		$.ajax({
@@ -66,13 +75,15 @@ var HugPostData = React.createClass({
 		var content = this.state.content.trim();
 		var duration = this.state.duration.trim();
 		var dayOfHug = this.state.dayOfHug.trim();
+		var lat = this.state.lat;
+		var lng = this.state.lng;
 
 		if(!title && !content && !duration && !dayOfHug){
 			return;
 		}
 
-		this.handleNewHugPost({ title: title, content: content, duration: duration, dayOfHug: dayOfHug });
-		this.setState({ title: '', content: '', duration: '', dayOfHug: '' });
+		this.handleNewHugPost({ title: title, content: content, duration: duration, dayOfHug: dayOfHug, lat: lat, lng: lng });
+		this.setState({ title: '', content: '', duration: '', dayOfHug: '', lat: '', lng: '' });
 
 	},
 
@@ -83,7 +94,14 @@ var HugPostData = React.createClass({
 							handleTitleChange={ this.handleTitleChange }
 							handleContentChange={ this.handleContentChange }
 							handleDurationChange={ this.handleDurationChange }
-							handleDayOfHugChange={ this.handleDayOfHugChange } />
+							handleDayOfHugChange={ this.handleDayOfHugChange }
+							handleMarkerMoved={ this.handleMarkerMoved }
+							title={ this.state.title }
+							content={ this.state.content }
+							duration={ this.state.duration }
+							dayOfHug={ this.state.dayOfHug }
+							lat={ this.state.lat }
+							lng={ this.state.lng } />
 			</div>
 			)
 	}
