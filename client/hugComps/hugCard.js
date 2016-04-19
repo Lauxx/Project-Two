@@ -16,9 +16,7 @@
 
 var React = require('react');
 var moment = require('moment');
-
 var CommentList = require('./commentList');
-
 var CommentPostData = require('./commentPostData');
 
 var HugCard = React.createClass({
@@ -64,43 +62,41 @@ var HugCard = React.createClass({
 		 if(this.props.user._id === loggedInUser ){
 			return (
 				<div>
-				<div className="container col-xs-6 col-xs-offset-3">
+				<div className="col-xs-12 col-md-8 col-md-offset-2 col-lg-3">
 					<div className="card">
   						<div className="card-block">
     						<h4 className="card-title">{this.props.title} from @{user}</h4>
     						<p className="card-text">{this.props.content}</p>
     						<p className="card-text"> When: {this.props.dayOfHug}</p>
     						<p className="card-text"><small class="text-muted">{this.props.duration}</small></p>  						
-  							<a className="btn btn-primary" onClick={ this.deleteHugPost.bind(null, this.props.id) }>Delete Post</a>
-  						
-  							<CommentList comments={this.props.comments} 
+  							<a className="btn btn-primary" onClick={ this.deleteHugPost.bind(null, this.props.id) }>Delete Post</a>	
+							{ commentForm }  						
+  						</div>
+  					</div>
+					<CommentList comments={this.props.comments} 
 								loadHugsFromServer={this.props.loadHugsFromServer} 
 								activeUser={ this.state.activeUser }/>
-							{ commentForm }
-
-  						</div>
-					</div>
+							
 				</div>
 			</div>
 				)
 		} else {
 			return (
 				<div>
-				<div className="container col-xs-6 col-xs-offset-3">
+				<div className="col-xs-12 col-md-8 col-md-offset-2 col-lg-3">
 					<div className="card">
   						<div className="">
     						<h4 className="card-title">{this.props.title} from @{user}</h4>
     						<p className="card-text">{this.props.content}</p>
     						<p className="card-text">When: {this.props.dayOfHug}</p>
     						<p className="card-text"><small className="text-muted">{this.props.duration}</small></p>
-  							<CommentList comments={this.props.comments} 
+  							{ commentForm }
+  						</div>
+  					</div>
+					<CommentList comments={this.props.comments} 
 								loadHugsFromServer={this.props.loadHugsFromServer} 
 								activeUser={ this.state.activeUser }/>
-								{ commentForm }
-
-
-  						</div>
-					</div>
+								
 				</div>
             </div>
 				)

@@ -23,6 +23,7 @@ var Home = React.createClass({
 			<div>
 				<div className="container jumbotron">
 				    <h1> Hug someone today! </h1>
+				    
 				</div>
 			</div>
 		)

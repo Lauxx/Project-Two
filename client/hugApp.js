@@ -70,8 +70,7 @@ var HugApp = React.createClass({
       	<Home />
       	{ userApp }
       	{ hugListData } 
-      	<HugsMap />
-        <Footer />
+  
       </div>
       );
   }

@@ -38,7 +38,7 @@ var CommentList = React.createClass({
 		if (comm.user._id === loggedInUser){
 			return (
 			<div>
-				<div className="container col-xs-10 col-xs-offset-1">
+				<div className="container col-xs-12">
 					<div className="card">
   						<div className="card-block">
   							<img src='' />
@@ -54,7 +54,7 @@ var CommentList = React.createClass({
 	} else {
 		return (
 			<div>
-				<div className="container col-xs-10 col-xs-offset-1">
+				<div className="container col-xs-12">
 					<div className="card">
   						<div className="card-block">
   							<img src='' />
