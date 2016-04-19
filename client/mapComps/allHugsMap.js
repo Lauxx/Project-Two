@@ -34,10 +34,12 @@ var AllHugsMap = React.createClass({
           			onRequestClose={this.closeModal}
           			style={customStyles} >
 
-          		<h2 ref="subtitle">hug will be hee</h2>
-
+          		<h2 ref="subtitle">{this.state.activeHug.title}</h2>
+          		<p> From @{ this.state.activeHug.user.local.username }</p>
+          		<p> Content: { this.state.activeHug.content }</p>
+          		<p> Date of hug: { this.state.activeHug.dayOfHug } </p>
+          		<p> { this.state.activeHug.duration } </p>
           		<button onClick={this.closeModal}>close</button>
-          		<div>I am a modal</div>
 				</Modal>
 			</div>
 			)
