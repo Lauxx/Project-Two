@@ -19,24 +19,29 @@
 	margin-bottom: 3%;
 }
 
+@media (max-width: 1210px){
+	#google-map-container{
+		height: 600px !important;
+		width: 700px !important;
+		margin: auto !important;
+	}
+}
+
+@media (max-width: 780px){
+	#google-map-container{
+		height: 550px !important;
+		width: 450px !important;
+		margin: auto !important;
+	}
+}
 
 #google-map-container{
-	margin-left: 400px;
-	height: 1000px;
-	width: 1000px;
-	margin-bottom: 50px;
-	margin-top: 50px;
+	height: 800px;
+	width: 1100px;
+	margin: auto;
+
 }
 
 body{
 	padding-bottom: 50px;
-}
-
-#map { 
-  height: 800px;
-  width: 800px;
-  margin: 60px;
-  position: relative;
-
-
 }

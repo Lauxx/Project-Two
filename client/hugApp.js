@@ -66,11 +66,15 @@ var HugApp = React.createClass({
     var hugListData = this.state.hugArray ? <HugListData hugArray={this.state.hugArray} loadHugsFromServer={this.loadHugsFromServer} /> : null;
     var userApp = this.state.user ?  <UserApp user={ this.state.user } getCurrentUserFromServer={this.getCurrentUserFromServer} loadHugsFromServer={this.loadHugsFromServer} /> : null
     return (
-      <div>
-      	<Home />
-      	{ userApp }
-      	{ hugListData } 
-      <AllHugsMap hugArray={this.state.hugArray} />
+      <div className="container-fluid">
+        <div className='row'>
+      	   <Home />
+      	   { userApp }
+      	   { hugListData } 
+        </div>
+        <div className="row">
+          <AllHugsMap hugArray={this.state.hugArray} />
+        </div>
       </div>
       );
   }
