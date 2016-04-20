@@ -49,12 +49,12 @@ var HugPostForm = React.createClass({
 						<input type="text" onChange={this.props.handleDurationChange} value={ this.props.duration } className="form-control" id="" placeholder="Input field" />
 					</div>
 					<br/><br/>
-					<h4> Drag the Map Marker to your Hug location </h4>
+					<h4> Drag the marker to your Hug location </h4>
 					<br/>
 					<NewHugsMap onMarkerMoved={ this.props.handleMarkerMoved } value={ {lat: this.props.lat, lng: this.props.lng} }/>
 					
 					<br/><br/>
-					<button type="submit" className="btn btn-primary">Submit</button>
+					<button type="submit" className="btn btn-primary">Post Your Hug</button>
 				</form>
 			</div>
 			)

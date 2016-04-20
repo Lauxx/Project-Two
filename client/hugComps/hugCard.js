@@ -54,7 +54,7 @@ var HugCard = React.createClass({
 
 	render: function(){
 		
-		var commentForm = this.state.activeUser ? <CommentPostData id={this.props.id} loadHugsFromServer={this.props.loadHugsFromServer}/> : null;
+		var commentForm = this.state.activeUser ? <CommentPostData id={this.props.id} loadHugsFromServer={this.props.loadHugsFromServer} user={this.props.user}/> : null;
 		var user = this.props.user && this.props.user.local ? this.props.user.local.username : 'no user';
 		var loggedInUser = this.state.activeUser && this.state.activeUser.local ? this.state.activeUser._id : loggedInUser;
 		var userImage = this.props.user && this.props.user.local ? this.props.user.local.profileImage : null;
@@ -62,7 +62,7 @@ var HugCard = React.createClass({
 		 if(this.props.user._id === loggedInUser ){
 			return (
 				<div>
-				<div className="col-xs-12 col-md-8 col-md-offset-2 col-lg-3 hugCard">
+				<div className="col-xs-10 col-lg-3 hugCardLoggedIn">
 					<div className="card">
   						<div className="card-block">
   							<img src={ userImage } className="img-thumbnail"  width="304" height="236"/>
@@ -70,8 +70,9 @@ var HugCard = React.createClass({
     						<p className="card-text">{this.props.content}</p>
     						<p className="card-text"> When: {this.props.dayOfHug}</p>
     						<p className="card-text"><small class="text-muted">{this.props.duration}</small></p>  						
-  							<a className="btn btn-primary" onClick={ this.deleteHugPost.bind(null, this.props.id) }>Delete Post</a>	
-							{ commentForm }  						
+  							<a className="btn btn-primary" onClick={ this.deleteHugPost.bind(null, this.props.id) }>Delete Post</a><br/><br/>	 
+							{ commentForm } 
+
   						</div>
   					</div>
 					<CommentList comments={this.props.comments} 
@@ -84,7 +85,7 @@ var HugCard = React.createClass({
 		} else {
 			return (
 				<div>
-				<div className="col-xs-12 col-md-8 col-md-offset-2 col-lg-3 hugCard">
+				<div className="col-xs-10 col-lg-3 hugCardLoggedIn">
 					<div className="card">
   						<div className="">
   							<img src={ userImage } className="img-thumbnail"  width="304" height="236"/>

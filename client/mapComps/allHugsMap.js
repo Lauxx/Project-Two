@@ -2,6 +2,7 @@ var React = require('react');
 var MapLoader = require('./mapLoader');
 import { GoogleMap, Marker, InfoWindow } from 'react-google-maps'
 import Modal from 'react-modal'
+import {triggerEvent} from "react-google-maps/lib/utils"
 
 const customStyles = {
   content : {

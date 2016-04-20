@@ -61,7 +61,7 @@ var CommentPostData = React.createClass({
 	render: function(){
 		return (
 			<div>
-				<CommentPostForm body={this.state.body} handleBodyChange={this.handleBodyChange} handleCommentSubmit={this.handleCommentSubmit}/>
+				<CommentPostForm body={this.state.body} handleBodyChange={this.handleBodyChange} handleCommentSubmit={this.handleCommentSubmit} user={ this.props.user }/>
 			</div>
 			)
 	}
