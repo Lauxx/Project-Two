@@ -37,11 +37,11 @@ var AllHugsMap = React.createClass({
           			style={customStyles} >
           		<img src={ this.state.activeHug.user.local.profileImage } className="img-thumbnail"  width="304" height="236" />	
           		<h2 ref="subtitle">{this.state.activeHug.title}</h2>
-          		<p> From @{ this.state.activeHug.user.local.username }</p>
-          		<p> Content: { this.state.activeHug.content }</p>
-          		<p> Date of hug: { this.state.activeHug.dayOfHug } </p>
-          		<p> { this.state.activeHug.duration } </p>
-          		<button onClick={this.closeModal}>close</button>
+          			<p> From @{ this.state.activeHug.user.local.username }</p>
+          			<p> Content: { this.state.activeHug.content }</p>
+          			<p> Date of hug: { this.state.activeHug.dayOfHug } </p>
+          			<p> { this.state.activeHug.duration } </p>
+          			<button onClick={this.closeModal}>close</button>
 				</Modal>
 			</div>
 			)
@@ -79,6 +79,7 @@ var AllHugsMap = React.createClass({
       			<GoogleMap
         			defaultZoom={14}
         			center={{lat: 46.8787, lng: -114.000}}
+        			
       			>
         		{ allHugs }	
         		 { this.modalDisplay() }

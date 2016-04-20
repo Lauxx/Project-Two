@@ -62,7 +62,7 @@ var HugCard = React.createClass({
 		 if(this.props.user._id === loggedInUser ){
 			return (
 				<div>
-				<div className="col-xs-12 col-md-8 col-md-offset-2 col-lg-3">
+				<div className="col-xs-12 col-md-8 col-md-offset-2 col-lg-3 hugCard">
 					<div className="card">
   						<div className="card-block">
   							<img src={ userImage } className="img-thumbnail"  width="304" height="236"/>
@@ -84,7 +84,7 @@ var HugCard = React.createClass({
 		} else {
 			return (
 				<div>
-				<div className="col-xs-12 col-md-8 col-md-offset-2 col-lg-3">
+				<div className="col-xs-12 col-md-8 col-md-offset-2 col-lg-3 hugCard">
 					<div className="card">
   						<div className="">
   							<img src={ userImage } className="img-thumbnail"  width="304" height="236"/>

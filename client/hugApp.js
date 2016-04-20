@@ -21,7 +21,6 @@
 var React = require('react');
 var ReactDom = require('react-dom');
 var Footer = require('./footer');
-var Home = require('./home');
 var HugListData = require('./hugComps/HugListData');
 var AllHugsMap = require('./mapComps/allHugsMap');
 var UserApp = require('./userComps/userApp');
@@ -68,7 +67,6 @@ var HugApp = React.createClass({
     return (
       <div className="container-fluid">
         <div className='row'>
-      	   <Home />
       	   { userApp }
       	   { hugListData } 
         </div>
