@@ -1,23 +1,26 @@
 //  HugApp
 //     HomePage(Logo/Carousel/Quotes)
 //     UserApp
+//     UserToggle 
 //       UserDisplayCard
 //         UserFormData
 //          UserUpdateForm
 //        HugPostData
 //        HugPostForm 
-//     HugListData
 //     HugList
 //       HugCard
 //       CommentList
 //       CommentPostData
 //        CommentPostForm
+//     AllHugsMap
+//     NewHugsMap  
 //     Footer
 
 var React = require('react');
 
 function UserToggle(props){
 		return (
+
 			<div className="icons">
 				<div className="container col-lg-1 col-lg-offset-4">
 					<a onClick={ props.toggleActiveComp.bind(null,'userDisplay') } ><img src="img/user.png" /></a>
@@ -32,6 +35,7 @@ function UserToggle(props){
 						<div> Post a Hug</div>
 				</div>
 			</div>
+			
 			)
 	};
 

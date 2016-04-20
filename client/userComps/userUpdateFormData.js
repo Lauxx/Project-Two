@@ -1,17 +1,19 @@
 //  HugApp
 //     HomePage(Logo/Carousel/Quotes)
 //     UserApp
+//     UserToggle 
 //       UserDisplayCard
 //         UserFormData
 //          UserUpdateForm
 //        HugPostData
 //        HugPostForm 
-//     HugListData
 //     HugList
 //       HugCard
 //       CommentList
 //       CommentPostData
 //        CommentPostForm
+//     AllHugsMap
+//     NewHugsMap  
 //     Footer
 
 
@@ -26,13 +28,16 @@ var UserUpdateFormData = React.createClass({
 		}
 	},
 
+
 	handleUserNameChange: function(e){
 		this.setState({ username: e.target.value })
 	},
 
+
 	handleProfileImageChange: function(e){
 		this.setState({ profileImage: e.target.value })
 	},
+
 
 
 	handleUserFormSubmit: function(userInfo){
@@ -54,6 +59,8 @@ var UserUpdateFormData = React.createClass({
 		});
 	},
 
+
+
 	handleUserSubmit: function(e){
 		e.preventDefault();
 		var user={}
@@ -69,17 +76,20 @@ var UserUpdateFormData = React.createClass({
 		this.setState({ username: '', profileImage: ''});
 	},
 
+
 	render: function(){
 		return (
-			<div className="container">
-			<UserUpdateForm 
-				toggleActiveComp={ this.props.toggleActiveComp }
-				handleUserSubmit={ this.handleUserSubmit } 
-				handleUserNameChange={ this.handleUserNameChange }
-				handleProfileImageChange={ this.handleProfileImageChange }
-				username={ this.state.username} 
-				profileImage={ this.state.profileImage }/>
+
+			<div>
+				<UserUpdateForm 
+					toggleActiveComp={ this.props.toggleActiveComp }
+					handleUserSubmit={ this.handleUserSubmit } 
+					handleUserNameChange={ this.handleUserNameChange }
+					handleProfileImageChange={ this.handleProfileImageChange }
+					username={ this.state.username} 
+					profileImage={ this.state.profileImage }/>
 			</div>
+			
 			)
 	}
 });

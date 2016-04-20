@@ -1,17 +1,19 @@
 //  HugApp
 //     HomePage(Logo/Carousel/Quotes)
 //     UserApp
+//     UserToggle 
 //       UserDisplayCard
 //         UserFormData
 //          UserUpdateForm
 //        HugPostData
 //        HugPostForm 
-//     HugListData
 //     HugList
 //       HugCard
 //       CommentList
 //       CommentPostData
 //        CommentPostForm
+//     AllHugsMap
+//     NewHugsMap  
 //     Footer
 
 var React = require('react');
@@ -25,9 +27,11 @@ var CommentPostData = React.createClass({
 		}
 	},
 
+
 	handleBodyChange: function(e){
 		this.setState({body: e.target.value})
 	},
+
 
 	handleNewCommentPost: function(comment){
 		$.ajax({
@@ -43,9 +47,12 @@ var CommentPostData = React.createClass({
 		})
 	},
 
+
 	handleCommentSubmit: function(e){
 		e.preventDefault();
+
 		var comment = {};
+
 		comment.body = this.state.body.trim();
 
 		if(!comment.body){
@@ -60,9 +67,11 @@ var CommentPostData = React.createClass({
 
 	render: function(){
 		return (
+
 			<div>
-				<CommentPostForm body={this.state.body} handleBodyChange={this.handleBodyChange} handleCommentSubmit={this.handleCommentSubmit} user={ this.props.user }/>
+				<CommentPostForm body={this.state.body} handleBodyChange={this.handleBodyChange} handleCommentSubmit={this.handleCommentSubmit} user={ this.props.user} />
 			</div>
+			
 			)
 	}
 });

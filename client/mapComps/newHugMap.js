@@ -1,3 +1,24 @@
+//  HugApp
+//     HomePage(Logo/Carousel/Quotes)
+//     UserApp
+//     UserToggle 
+//       UserDisplayCard
+//         UserFormData
+//          UserUpdateForm
+//        HugPostData
+//        HugPostForm 
+//     HugList
+//       HugCard
+//       CommentList
+//       CommentPostData
+//        CommentPostForm
+//     AllHugsMap
+//     NewHugsMap  
+//     Footer
+
+
+
+
 var React = require('react');
 var MapLoader = require('./mapLoader');
 import { GoogleMap, Marker } from 'react-google-maps'

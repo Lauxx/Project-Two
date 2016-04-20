@@ -1,17 +1,19 @@
 //  HugApp
 //     HomePage(Logo/Carousel/Quotes)
 //     UserApp
+//     UserToggle 
 //       UserDisplayCard
 //         UserFormData
 //          UserUpdateForm
 //        HugPostData
 //        HugPostForm 
-//     HugListData
 //     HugList
 //       HugCard
 //       CommentList
 //       CommentPostData
 //        CommentPostForm
+//     AllHugsMap
+//     NewHugsMap  
 //     Footer
 
 
@@ -20,16 +22,15 @@ var React = require('react');
 var Footer = React.createClass({
 	render: function(){
 		return (
+
 		<div>
 			<div className="navbar footer navbar-fixed-bottom">
 				<div className="container-fluid">
-					<a className="navbar-brand" href="#">Title</a>
-					<ul className="nav navbar-nav">
-						
-					</ul>
+					<p className="navbar-brand footer">HugSocial</p>
 				</div>
 			</div>
-			</div>
+		</div>
+		
 			)
 	}
 });
