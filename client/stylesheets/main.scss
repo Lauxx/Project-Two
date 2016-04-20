@@ -2,18 +2,23 @@
 	border: 1px solid black;
 }
 
+
 .glyph{
 	font-size: 20px;
 	float: right;
 	position: top;
 }
 
-.icons{
-	
+.icons{	
 	margin-bottom: 5%;
 	padding: 3%;
 	text-align: center;
 	font-family: Avenir;
+}
+
+.userIcon{
+	cursor: pointer; 
+	cursor: hand;
 }
 
 .avenir{
