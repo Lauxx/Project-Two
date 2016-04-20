@@ -1,21 +1,16 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>HugApp</title>
-	<meta charset="utf-8">
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-	
-
-		<!-- Place in the <head>, after the three links -->
-
-	<link rel="stylesheet" type="text/css" href="./client/stylesheets/main.scss">
+		<title>HugSocial</title>
+			<meta charset="utf-8">
+			<meta http-equiv="x-ua-compatible" content="ie=edge">
+			<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+			<link rel="stylesheet" type="text/css" href="./client/stylesheets/main.scss">
 	
 	</head>
 	<body>
-	<nav class="navbar navbar-default navbar-inverse" role="navigation">
+		<nav class="navbar navbar-fixed-top head" role="navigation">
   		<div class="container-fluid">
     	<div class="navbar-header ">
       		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -24,7 +19,7 @@
         		<span class="icon-bar"></span>
         		<span class="icon-bar"></span>
       		</button>
-      		<a class="navbar-brand brand">HugApp</a>
+      		<p class="navbar-brand brand head">HugSocial</p>
 
 			
     	</div>
@@ -32,12 +27,12 @@
     	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
      		 <ul class="nav navbar-nav navbar-right">
 				<li class="dropdown">
-					<a href="#" class="dropdown-toggle optima" 
+					<a class="dropdown-toggle head" 
 					data-toggle="dropdown">Login<span class=""></span></a>
 					<ul id="" class="dropdown-menu">
 						<li>
 								<div class="row">
-									<div class="col-md-12 optima">
+									<div class="col-md-12">
 										<form action="/login" method="POST" 
 										role="form">
 										
@@ -55,12 +50,12 @@
 					</ul>
         		</li>
         		<li class="dropdown">
-					<a href="#" class="dropdown-toggle optima" 
+					<a href="#" class="dropdown-toggle head" 
 					data-toggle="dropdown">Sign Up<span class=""></span></a>
 					<ul id="login-dp" class="dropdown-menu">
 						<li>
 								<div class="row">
-									<div class="col-md-12 optima">
+									<div class="col-md-12 ">
 										<form action="/signup" method="POST" 
 										role="form">
 											
@@ -82,16 +77,16 @@
         		
       		 		</ul>
       		 	</li>
-      		 	<li><a href="/logout" class="optima">Logout</a></li>
+      		 	<li><a href="/logout" class="head">Logout</a></li>
     	</div>
  	 </div>
-	</nav>
+		</nav>
 
-	<!-- Place somewhere in the <body> of your page -->
-<div class="container col-lg-8 col-lg-offset-2">
+		<div class="car-contain">
+	<div class="col-lg-8 col-lg-offset-2">
 	<div id="carousel-id" class="carousel slide" data-ride="carousel">
 		<ol class="carousel-indicators">
-			<li data-target="#carousel-id" data-slide-to="0" class="active"></li>
+			<li data-target="#carousel-id" data-slide-to="0" class=""></li>
 			<li data-target="#carousel-id" data-slide-to="1" class=""></li>
 			<li data-target="#carousel-id" data-slide-to="2" class=""></li>
 			<li data-target="#carousel-id" data-slide-to="3" class=""></li>
@@ -148,19 +143,15 @@
 		<a class="left carousel-control" href="#carousel-id" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
 		<a class="right carousel-control" href="#carousel-id" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
 	</div>
-</div>
+	</div>
+		</div>
 
 
-<div class="container">
-<br><br><br><br><br><br>
-</div>
-<div id="app"></div>
-
+		<div id="app">
+		</div>
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"crossorigin="anonymous"></script>
-	
-	
 	<script src="https://fb.me/react-0.13.3.js"></script>
   	<script src="https://fb.me/JSXTransformer-0.13.3.js"></script>
 	<script type="text/javascript" src="../static/bundle.js"></script>

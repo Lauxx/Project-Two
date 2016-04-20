@@ -1,17 +1,19 @@
 //  HugApp
 //     HomePage(Logo/Carousel/Quotes)
 //     UserApp
+//     UserToggle 
 //       UserDisplayCard
 //         UserFormData
 //          UserUpdateForm
 //        HugPostData
 //        HugPostForm 
-//     HugListData
 //     HugList
 //       HugCard
 //       CommentList
 //       CommentPostData
 //        CommentPostForm
+//     AllHugsMap
+//     NewHugsMap  
 //     Footer
 
 
@@ -23,21 +25,23 @@ function HugList(props){
 	var hugs = props.hugArray.map(function(item){
 		
 		return <HugCard 
-							id = { item._id }
-							title = { item.title }
-							content = { item.content }
-							duration = { item.duration }
-							dayOfHug = { item.dayOfHug }
-							user = { item.user }
-							date = { item.date }
-							comments={ item.comments }
-							loadHugsFromServer={ props.loadHugsFromServer }
-							/>
-	})
+					id = { item._id }
+					title = { item.title }
+					content = { item.content }
+					duration = { item.duration }
+					dayOfHug = { item.dayOfHug }
+					user = { item.user }
+					date = { item.date }
+					comments={ item.comments }
+					loadHugsFromServer={ props.loadHugsFromServer } />
+		})
+
 		return (
+
 			<div>
 				{hugs}
 			</div>
+			
 			)
 };
 

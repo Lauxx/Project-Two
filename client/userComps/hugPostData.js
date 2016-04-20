@@ -1,21 +1,22 @@
 //  HugApp
 //     HomePage(Logo/Carousel/Quotes)
 //     UserApp
+//     UserToggle 
 //       UserDisplayCard
 //         UserFormData
 //          UserUpdateForm
 //        HugPostData
 //        HugPostForm 
-//     HugListData
 //     HugList
 //       HugCard
 //       CommentList
 //       CommentPostData
 //        CommentPostForm
+//     AllHugsMap
+//     NewHugsMap  
 //     Footer
 
 var React = require('react');
-
 var HugPostForm = require('./hugPostForm');
 
 var HugPostData = React.createClass({
@@ -31,22 +32,27 @@ var HugPostData = React.createClass({
 		}
 	},
 
+
 	handleMarkerMoved: function(lat, lng) {
 		this.setState({ lat: lat, lng: lng })
 		console.log(lat, lng);
 	},
 
+
 	handleTitleChange: function(e){
 		this.setState({ title: e.target.value });
 	},
+
 
 	handleContentChange: function(e){
 		this.setState({ content: e.target.value });
 	},
 
+
 	handleDurationChange: function(e){
 		this.setState({ duration: e.target.value });
 	},
+
 
 	handleDayOfHugChange: function(e){
 		this.setState({ dayOfHug: e.target.value })
@@ -68,6 +74,7 @@ var HugPostData = React.createClass({
 		})
 	},
 
+
 	handleHugSubmit: function(e){
 		e.preventDefault();
 
@@ -87,8 +94,10 @@ var HugPostData = React.createClass({
 
 	},
 
+
 	render: function(){
 		return (
+
 			<div>
 				<HugPostForm handleHugSubmit={ this.handleHugSubmit }
 							handleTitleChange={ this.handleTitleChange }
@@ -103,6 +112,7 @@ var HugPostData = React.createClass({
 							lat={ this.state.lat }
 							lng={ this.state.lng } />
 			</div>
+
 			)
 	}
 });

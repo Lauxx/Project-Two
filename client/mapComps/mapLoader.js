@@ -1,3 +1,22 @@
+//  HugApp
+//     HomePage(Logo/Carousel/Quotes)
+//     UserApp
+//     UserToggle 
+//       UserDisplayCard
+//         UserFormData
+//          UserUpdateForm
+//        HugPostData
+//        HugPostForm 
+//     HugList
+//       HugCard
+//       CommentList
+//       CommentPostData
+//        CommentPostForm
+//     AllHugsMap
+//     NewHugsMap  
+//     Footer
+
+
 var React = require('react');
 var ScriptjsLoader = require('react-google-maps/lib/async/ScriptjsLoader');
 

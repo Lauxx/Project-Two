@@ -1,17 +1,19 @@
 //  HugApp
 //     HomePage(Logo/Carousel/Quotes)
 //     UserApp
+//     UserToggle 
 //       UserDisplayCard
 //         UserFormData
 //          UserUpdateForm
 //        HugPostData
 //        HugPostForm 
-//     HugListData
 //     HugList
 //       HugCard
 //       CommentList
 //       CommentPostData
 //        CommentPostForm
+//     AllHugsMap
+//     NewHugsMap  
 //     Footer
 
 var React = require('react');
@@ -61,47 +63,51 @@ var HugCard = React.createClass({
 
 		 if(this.props.user._id === loggedInUser ){
 			return (
-				<div>
-				<div className="col-xs-10 col-lg-3 hugCardLoggedIn">
-					<div className="card">
-  						<div className="card-block">
-  							<img src={ userImage } className="img-thumbnail"  width="304" height="236"/>
-    						<h4 className="card-title">{this.props.title} from @{user}</h4>
-    						<p className="card-text">{this.props.content}</p>
-    						<p className="card-text"> When: {this.props.dayOfHug}</p>
-    						<p className="card-text"><small class="text-muted">{this.props.duration}</small></p>  						
-  							<a className="btn btn-primary" onClick={ this.deleteHugPost.bind(null, this.props.id) }>Delete Post</a><br/><br/>	 
-							{ commentForm } 
 
-  						</div>
-  					</div>
-					<CommentList comments={this.props.comments} 
-								loadHugsFromServer={this.props.loadHugsFromServer} 
-								activeUser={ this.state.activeUser }/>
-							
-				</div>
-			</div>
-				)
-		} else {
-			return (
 				<div>
-				<div className="col-xs-10 col-lg-3 hugCardLoggedIn">
-					<div className="card">
-  						<div className="">
-  							<img src={ userImage } className="img-thumbnail"  width="304" height="236"/>
-    						<h4 className="card-title">{this.props.title} from @{user}</h4>
-    						<p className="card-text">{this.props.content}</p>
-    						<p className="card-text">When: {this.props.dayOfHug}</p>
-    						<p className="card-text"><small className="text-muted">{this.props.duration}</small></p>
-  							{ commentForm }
+					<div className="col-xs-10 col-lg-3 hugCardLoggedIn">
+						<div className="card">
+  							<div className="card-block">
+  								<img src={ userImage } className="img-thumbnail"  width="304" height="236"/>
+    							<h4 className="card-title">{this.props.title} from @{user}</h4>
+    							<p className="card-text">{this.props.content}</p>
+    							<p className="card-text"> When: {this.props.dayOfHug}</p>
+    							<p className="card-text"><small class="text-muted">{this.props.duration}</small></p>  						
+  								<a className="btn btn-primary" onClick={ this.deleteHugPost.bind(null, this.props.id) }>Delete Post</a><br/><br/>	 
+								{ commentForm } 
+							</div>
   						</div>
-  					</div>
-					<CommentList comments={this.props.comments} 
+						<CommentList 
+								comments={this.props.comments} 
 								loadHugsFromServer={this.props.loadHugsFromServer} 
 								activeUser={ this.state.activeUser }/>
-								
+					</div>
 				</div>
-            </div>
+
+				)
+
+		 } else {
+			return (
+
+				<div>
+					<div className="col-xs-10 col-lg-3 hugCardLoggedIn">
+						<div className="card">
+  							<div className="">
+  								<img src={ userImage } className="img-thumbnail"  width="304" height="236"/>
+    							<h4 className="card-title">{this.props.title} from @{user}</h4>
+    							<p className="card-text">{this.props.content}</p>
+    							<p className="card-text">When: {this.props.dayOfHug}</p>
+    							<p className="card-text"><small className="text-muted">{this.props.duration}</small></p>
+  								{ commentForm }
+  							</div>
+  						</div>
+						<CommentList 
+								comments={this.props.comments} 
+								loadHugsFromServer={this.props.loadHugsFromServer} 
+								activeUser={ this.state.activeUser }/>
+					</div>
+            	</div>
+            	
 				)
 		}
 	}

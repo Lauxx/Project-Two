@@ -1,17 +1,19 @@
 //  HugApp
 //     HomePage(Logo/Carousel/Quotes)
 //     UserApp
+//     UserToggle 
 //       UserDisplayCard
 //         UserFormData
 //          UserUpdateForm
 //        HugPostData
 //        HugPostForm 
-//     HugListData
 //     HugList
 //       HugCard
 //       CommentList
 //       CommentPostData
 //        CommentPostForm
+//     AllHugsMap
+//     NewHugsMap  
 //     Footer
 
 
@@ -21,10 +23,9 @@
 var React = require('react');
 var ReactDom = require('react-dom');
 var Footer = require('./footer');
-var HugListData = require('./hugComps/HugListData');
+var HugList = require('./hugComps/hugList');
 var AllHugsMap = require('./mapComps/allHugsMap');
 var UserApp = require('./userComps/userApp');
-
 require('./stylesheets/main.scss');
 
 var HugApp = React.createClass({
@@ -36,6 +37,7 @@ var HugApp = React.createClass({
     }
   },
 
+
   loadHugsFromServer: function(){
     var self = this;
     $.ajax({
@@ -45,6 +47,7 @@ var HugApp = React.createClass({
       self.setState({ hugArray: data })
     })
   },
+
 
   getCurrentUserFromServer: function(){
     var self = this;
@@ -56,24 +59,32 @@ var HugApp = React.createClass({
     })
   },
 
+
   componentDidMount: function(){
     this.loadHugsFromServer();
     this.getCurrentUserFromServer();
   },
 
+
   render: function() {
-    var hugListData = this.state.hugArray ? <HugListData hugArray={this.state.hugArray} loadHugsFromServer={this.loadHugsFromServer} /> : null;
+   
+    var hugListData = this.state.hugArray ? <HugList hugArray={this.state.hugArray} loadHugsFromServer={this.loadHugsFromServer} /> : null;
     var userApp = this.state.user ?  <UserApp user={ this.state.user } getCurrentUserFromServer={this.getCurrentUserFromServer} loadHugsFromServer={this.loadHugsFromServer} /> : null
+    
+
     return (
+
       <div className="container col-lg-12">
-        <div className='row'>
-      	   { userApp }
-      	   { hugListData } 
-        </div>
-        <div className="row">
-          <AllHugsMap hugArray={this.state.hugArray} />
-        </div>
+          <div className='row'>
+      	     { userApp }
+      	     { hugListData } 
+          </div>
+          <div className="row">
+            <AllHugsMap hugArray={this.state.hugArray} />
+          </div>
+        <Footer />
       </div>
+      
       );
   }
 });

@@ -1,22 +1,25 @@
 //  HugApp
 //     HomePage(Logo/Carousel/Quotes)
 //     UserApp
+//     UserToggle 
 //       UserDisplayCard
 //         UserFormData
 //          UserUpdateForm
 //        HugPostData
 //        HugPostForm 
-//     HugListData
 //     HugList
 //       HugCard
 //       CommentList
 //       CommentPostData
 //        CommentPostForm
+//     AllHugsMap
+//     NewHugsMap  
 //     Footer
 
 var React = require('react');
 
 var CommentList = React.createClass({
+
 	deleteComment: function(id){
 		if(confirm('Are you sure you want to delete your comment?')){
 			var self = this;
@@ -29,52 +32,61 @@ var CommentList = React.createClass({
 		}
 	},
 
+
 	render: function(){
+
 		var self = this;
 		var loggedInUser = this.props.activeUser && this.props.activeUser.local ? this.props.activeUser._id : loggedInUser;
 		var comments = this.props.comments.map(function(comm){
-		var user = comm.user && comm.user.local ? comm.user.local.username : 'no user';
+			var user = comm.user && comm.user.local ? comm.user.local.username : 'no user';
 
-		if (comm.user._id === loggedInUser){
-			return (
-			<div>
-				<div className="container col-xs-12">
-					<div className="card">
-  						<div className="card-block">
-  							<img src='' />
-    						<h4 className="card-title">@{user}</h4>
-    						<p className="card-text">{comm.body}</p>
-    						<p className="card-text"><small class="text-muted">{comm.date.substr(0,10)}</small></p>
-    						<a className="btn btn-primary" onClick={self.deleteComment.bind(null, comm._id)}>Delete Comment</a>
-  						</div>
-					</div>
-				</div>	
-			</div>
-			)
-	} else {
-		return (
-			<div>
-				<div className="container col-xs-12">
-					<div className="card">
-  						<div className="card-block">
-  							<img src='' />
-    						<h4 className="card-title">@{user}</h4>
-    						<p className="card-text">{comm.body}</p>
-    						<p className="card-text"><small class="text-muted">{comm.date.substr(0,10)}</small></p>
-    						
-  						</div>
-					</div>
-				</div>	
-			</div>
-			)
+			if (comm.user._id === loggedInUser){
+				return (
+
+				<div>
+					<div className="container col-xs-12">
+						<div className="card">
+  							<div className="card-block">
+  								<img src='' />
+    							<h4 className="card-title">@{user}</h4>
+    							<p className="card-text">{comm.body}</p>
+    							<p className="card-text"><small class="text-muted">{comm.date.substr(0,10)}</small></p>
+    							<a className="btn btn-primary" onClick={self.deleteComment.bind(null, comm._id)}>Delete Comment</a>
+  							</div>
+						</div>
+					</div>	
+				</div>
+
+				)
+
+			} else {
+
+				return (
+
+				<div>
+					<div className="container col-xs-12">
+						<div className="card">
+  							<div className="card-block">
+  								<img src='' />
+    							<h4 className="card-title">@{user}</h4>
+    							<p className="card-text">{comm.body}</p>
+    							<p className="card-text"><small class="text-muted">{comm.date.substr(0,10)}</small></p>
+    						</div>
+						</div>
+					</div>	
+				</div>
+
+				)
 		}
 	});
 		
 
 		return (
+
 			<div>
 				{comments}
 			</div>
+			
 			)
 	}
 });
