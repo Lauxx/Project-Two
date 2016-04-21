@@ -37,7 +37,7 @@ function MapLoader (props) {
       }
 
       containerElement={
-        <div id="google-map-container" />
+        <div id="google-map-container" className="container" />
       }
       googleMapElement={ props.children }
     />

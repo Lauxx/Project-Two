@@ -36,7 +36,7 @@ function NewHugMap (props) {
           position={ props.value }
           draggable={true}
           onDragend={ (event) => onMarkerMoved(event.latLng.lat(), event.latLng.lng()) }
-        />
+          icon={'img/heart.png'} />
       </GoogleMap>
     </MapLoader>
   )

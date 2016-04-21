@@ -21,7 +21,8 @@ var React = require('react');
 var MapLoader = require('./mapLoader');
 import { GoogleMap, Marker, InfoWindow } from 'react-google-maps'
 import Modal from 'react-modal'
-import {triggerEvent} from "react-google-maps/lib/utils"
+import { default as MarkerClusterer } from "react-google-maps/lib/addons/MarkerClusterer";
+
 
 const customStyles = {
   content : {
@@ -88,21 +89,29 @@ var AllHugsMap = React.createClass({
 
 		console.log(this.props.hugArray);
 		var self = this;
-	var allHugs = this.props.hugArray.map(function(hug){
-		return <Marker position={ {lat: hug.lat, lng: hug.lng} } onClick={ self.openModal.bind(null, hug) }/>
+		var allHugs = this.props.hugArray.map(function(hug){
+			return <Marker position={ {lat: hug.lat, lng: hug.lng} } onClick={ self.openModal.bind(null, hug) } icon={'img/heart.png'} />
 	
 	})
 	
 
 		return(
+
 			<MapLoader>
       			<GoogleMap
         			defaultZoom={14}
-        			center={{lat: 46.8787, lng: -114.000}}
-        			
-      			>
-        		{ allHugs }	
+        			center={{lat: 46.8787, lng: -114.000}} 
+        			>
+        			<MarkerClusterer
+          				averageCenter
+          				enableRetinaIcons
+          				gridSize={ 60 }
+        			>
+        		 	{ allHugs }
+
+        		 </MarkerClusterer >	
         		 { this.modalDisplay() }
+
       			</GoogleMap>
     		</MapLoader>
 
@@ -111,3 +120,4 @@ var AllHugsMap = React.createClass({
 });
 
 module.exports = AllHugsMap;
+
