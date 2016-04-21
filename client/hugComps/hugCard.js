@@ -63,10 +63,10 @@ var HugCard = React.createClass({
 
 		 if(this.props.user._id === loggedInUser ){
 			return (
-
-				<div className="container hugCard col-lg-3 col-md-3">
+			<div className='flex-card'>
+				<div className="container hugCard col-lg-3">
 					<div className="card">
-						<div className="avenir ">
+						<div className="avenir">
   								
   								 <a><span className="glyph glyphicon glyphicon-remove-circle" title="Delete Your Hug" onClick={ this.deleteHugPost.bind(null, this.props.id) }></span></a>
   								<img src={ userImage } className="img-thumbnail card-img-top img"  width="304" height="236"/>
@@ -83,10 +83,11 @@ var HugCard = React.createClass({
 								loadHugsFromServer={this.props.loadHugsFromServer} 
 								activeUser={ this.state.activeUser }/>
 						
-  						</div>
+  								</div>
 						</div>
 					</div>
 				</div>
+			</div>	
 
 				)
 
