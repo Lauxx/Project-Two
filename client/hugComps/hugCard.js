@@ -17,14 +17,100 @@
 //     Footer
 
 var React = require('react');
-var moment = require('moment');
+import Modal from 'react-modal'
 var CommentList = require('./commentList');
 var CommentPostData = require('./commentPostData');
+
+const customStyles = {
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)'
+  }
+};
 
 var HugCard = React.createClass({
 	getInitialState: function(){
 		return {
-			activeUser: null
+			activeUser: null,
+			modalIsOpen: false,
+			
+		}
+	},
+
+	openModal: function(){
+		this.setState({ modalIsOpen: true })
+
+	},
+
+	afterOpenModal: function(){
+		this.refs.subtitle.style.color = '#f00'
+	},
+
+	closeModal: function(){
+		this.setState({ modalIsOpen: false })
+	},
+
+	modalDisplay: function(){
+
+		var user = this.props.user && this.props.user.local ? this.props.user.local.username : 'no user';
+		var userImage = this.props.user && this.props.user.local ? this.props.user.local.profileImage : null;
+		var commentForm = this.state.activeUser ? <CommentPostData id={this.props.id} loadHugsFromServer={this.props.loadHugsFromServer} user={this.props.user}/> : null;
+		var loggedInUser = this.state.activeUser && this.state.activeUser.local ? this.state.activeUser._id : loggedInUser;
+		
+	if(this.props.user._id === loggedInUser ){
+		return (
+			<div>
+			<Modal
+					isOpen={this.state.modalIsOpen}
+          			onAfterOpen={this.afterOpenModal}
+          			onRequestClose={this.closeModal}
+          			style={customStyles} >
+          		<img src={ userImage } className="img-thumbnail"  width="304" height="236" />	
+          		<h2 ref="subtitle">{this.props.title}</h2>
+          			<p> From @{ user }</p>
+          			<p> Content: { this.props.content }</p>
+          			<p> Date of hug: { this.props.dayOfHug } </p>
+          			<p> { this.props.duration } </p>
+          			{ commentForm } 
+
+							<CommentList 
+								comments={this.props.comments} 
+								loadHugsFromServer={this.props.loadHugsFromServer} 
+								activeUser={ this.state.activeUser }/>
+
+          			<button onClick={this.closeModal}>close</button>
+				</Modal>
+			</div>
+			)
+		} else {
+			return (
+				<div>
+			<Modal
+					isOpen={this.state.modalIsOpen}
+          			onAfterOpen={this.afterOpenModal}
+          			onRequestClose={this.closeModal}
+          			style={customStyles} >
+          		<img src={ userImage } className="img-thumbnail"  width="304" height="236" />	
+          		<h2 ref="subtitle">{this.props.title}</h2>
+          			<p> From @{ user }</p>
+          			<p> Content: { this.props.content }</p>
+          			<p> Date of hug: { this.props.dayOfHug } </p>
+          			<p> { this.props.duration } </p>
+          			{ commentForm } 
+
+							<CommentList 
+								comments={this.props.comments} 
+								loadHugsFromServer={this.props.loadHugsFromServer} 
+								activeUser={ this.state.activeUser }/>
+
+          			<button onClick={this.closeModal}>close</button>
+				</Modal>
+			</div>
+				)
 		}
 	},
 
@@ -56,15 +142,15 @@ var HugCard = React.createClass({
 
 	render: function(){
 		
-		var commentForm = this.state.activeUser ? <CommentPostData id={this.props.id} loadHugsFromServer={this.props.loadHugsFromServer} user={this.props.user}/> : null;
+		
 		var user = this.props.user && this.props.user.local ? this.props.user.local.username : 'no user';
-		var loggedInUser = this.state.activeUser && this.state.activeUser.local ? this.state.activeUser._id : loggedInUser;
+		
 		var userImage = this.props.user && this.props.user.local ? this.props.user.local.profileImage : null;
 
-		 if(this.props.user._id === loggedInUser ){
+		 
 			return (
-			<div className='flex-card'>
-				<div className="container hugCard col-lg-3">
+			<div className=''>
+				<div className="container hugCard col-lg-3 col-md-3">
 					<div className="card">
 						<div className="avenir">
   								
@@ -76,46 +162,17 @@ var HugCard = React.createClass({
     							<p className="card-text">{this.props.content}</p>
     							<p className="card-text"> When: {this.props.dayOfHug}</p>
     							<p className="card-text"><small className="text-muted">{this.props.duration}</small></p>  						
-  									 
-								{ commentForm } 
-							<CommentList 
-								comments={this.props.comments} 
-								loadHugsFromServer={this.props.loadHugsFromServer} 
-								activeUser={ this.state.activeUser }/>
+  								<button onClick={ this.openModal.bind(null, this.props.id) }>Modal Button</button>	 
+								{ this.modalDisplay() }
+								
 						
   								</div>
 						</div>
 					</div>
 				</div>
 			</div>	
-
-				)
-
-		 } else {
-			return (
-
-				<div className="container hugCard col-lg-3 col-md-3">
-					<div className="card">
-						<div className="avenir">
-  							
-  								<img src={ userImage } className="img-thumbnail card-img-top img"  width="304" height="236"/>
-    				
-    							<h4 className="card-title">{this.props.title} from @{user}</h4>
-    							<p className="card-text">{this.props.content}</p>
-    							<p className="card-text">When: {this.props.dayOfHug}</p>
-    							<p className="card-text"><small className="text-muted">{this.props.duration}</small></p>
-  								{ commentForm }
-  							<CommentList 
-								comments={this.props.comments} 
-								loadHugsFromServer={this.props.loadHugsFromServer} 
-								activeUser={ this.state.activeUser }/>
-  						</div>
-						
-					</div>
-            	</div>
-            	
-				)
-		}
+			)
+		
 	}
 });
 
