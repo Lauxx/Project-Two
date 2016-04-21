@@ -23,7 +23,7 @@ var CommentPostForm = React.createClass({
 		var user = this.props.user && this.props.user.local ? this.props.user.local.username : 'no user';
 		return (
 			<div>
-		    	<form className="col-lg-12 comment-box" onSubmit={ this.props.handleCommentSubmit }>
+		    	<form className="col-lg-10 comment-box" onSubmit={ this.props.handleCommentSubmit }>
 		        	<fieldset className="form-group">
 		        		<br/>
 		       			<label for="formGroupExampleInput2">Leave @{ user } a comment!</label>

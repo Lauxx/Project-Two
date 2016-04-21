@@ -23,7 +23,7 @@ function UserToggle(props){
 
 			<div className="icons">
 				<div className="container col-lg-1 col-lg-offset-4">
-					<a onClick={ props.toggleActiveComp.bind(null,'userDisplay')} className="userIcon" ><img src="img/user.png" /></a>
+					<a onClick={ props.toggleActiveComp.bind(null,'userDisplay')} className="userIcon"><img src="img/user.png"/></a>
 						<p>Your User Display</p>
 					
 				</div>
@@ -34,7 +34,7 @@ function UserToggle(props){
 				</div>
 				<div className="container col-lg-1">
 					<a onClick={ props.toggleActiveComp.bind(null,'hugPost')} className="userIcon" ><img src="img/heart.png"/></a>
-						<p id="heartText">Post a Hug</p>
+						<p>Post a Hug</p>
 											
 				</div>
 			</div>

@@ -64,24 +64,27 @@ var HugCard = React.createClass({
 		 if(this.props.user._id === loggedInUser ){
 			return (
 
-				<div>
-					<div className="col-xs-10 col-lg-3 hugCardLoggedIn">
-						<div className="card">
-  							<div className="">
-  								<a><span className="glyphicon glyphicon-remove-circle glyph" title="Delete Your Hug" onClick={ this.deleteHugPost.bind(null, this.props.id) }></span></a>
-  								<img src={ userImage } className="img-thumbnail"  width="304" height="236"/>
-    							<h4 className="card-title">{this.props.title} from @{user}</h4>
+				<div className="container hugCard col-lg-3 col-md-3">
+					<div className="card">
+						<div className="avenir ">
+  								
+  								 <a><span className="glyph glyphicon glyphicon-remove-circle" title="Delete Your Hug" onClick={ this.deleteHugPost.bind(null, this.props.id) }></span></a>
+  								<img src={ userImage } className="img-thumbnail card-img-top img"  width="304" height="236"/>
+    							<div className="card-block">
+
+    							<h4 className="card-title">{this.props.title} <small> from </small> @{user} </h4>
     							<p className="card-text">{this.props.content}</p>
     							<p className="card-text"> When: {this.props.dayOfHug}</p>
-    							<p className="card-text"><small class="text-muted">{this.props.duration}</small></p>  						
+    							<p className="card-text"><small className="text-muted">{this.props.duration}</small></p>  						
   									 
 								{ commentForm } 
-							</div>
-  						</div>
-						<CommentList 
+							<CommentList 
 								comments={this.props.comments} 
 								loadHugsFromServer={this.props.loadHugsFromServer} 
 								activeUser={ this.state.activeUser }/>
+						
+  						</div>
+						</div>
 					</div>
 				</div>
 
@@ -90,22 +93,23 @@ var HugCard = React.createClass({
 		 } else {
 			return (
 
-				<div>
-					<div className="col-xs-10 col-lg-3 hugCardLoggedIn">
-						<div className="card">
-  							<div className="">
-  								<img src={ userImage } className="img-thumbnail"  width="304" height="236"/>
+				<div className="container hugCard col-lg-3 col-md-3">
+					<div className="card">
+						<div className="avenir">
+  							
+  								<img src={ userImage } className="img-thumbnail card-img-top img"  width="304" height="236"/>
+    				
     							<h4 className="card-title">{this.props.title} from @{user}</h4>
     							<p className="card-text">{this.props.content}</p>
     							<p className="card-text">When: {this.props.dayOfHug}</p>
     							<p className="card-text"><small className="text-muted">{this.props.duration}</small></p>
   								{ commentForm }
-  							</div>
-  						</div>
-						<CommentList 
+  							<CommentList 
 								comments={this.props.comments} 
 								loadHugsFromServer={this.props.loadHugsFromServer} 
 								activeUser={ this.state.activeUser }/>
+  						</div>
+						
 					</div>
             	</div>
             	
