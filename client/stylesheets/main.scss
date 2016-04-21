@@ -2,6 +2,11 @@
 	border: 1px solid black;
 }
 
+.myScroll{
+	position: relative;
+}
+
+
 .toggleIconBar{
 	background-color: white;
 }
@@ -10,6 +15,10 @@
 	font-size: 20px;
 	float: right;
 	position: top;
+}
+
+.comment-glyph{
+	float: right;
 }
 
 .icons{	
@@ -55,6 +64,7 @@
 .hugCard{
 	margin: 3%;
 	border: 1px solid black;
+	height: 450px;
 }
 
 .flex-card{

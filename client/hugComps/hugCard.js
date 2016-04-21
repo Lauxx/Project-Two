@@ -28,7 +28,8 @@ const customStyles = {
     right                 : 'auto',
     bottom                : 'auto',
     marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)'
+    transform             : 'translate(-50%, -50%)',
+    font 				  : 'avenir'			
   }
 };
 
@@ -94,6 +95,8 @@ var HugCard = React.createClass({
           			onAfterOpen={this.afterOpenModal}
           			onRequestClose={this.closeModal}
           			style={customStyles} >
+          		<div className="myScroll" data-target="#commentScroll">
+          		<div id="commentScroll">	
           		<img src={ userImage } className="img-thumbnail"  width="304" height="236" />	
           		<h2 ref="subtitle">{this.props.title}</h2>
           			<p> From @{ user }</p>
@@ -108,6 +111,8 @@ var HugCard = React.createClass({
 								activeUser={ this.state.activeUser }/>
 
           			<button onClick={this.closeModal}>close</button>
+          			</div>
+          		</div>	
 				</Modal>
 			</div>
 				)
@@ -154,7 +159,7 @@ var HugCard = React.createClass({
 					<div className="card">
 						<div className="avenir">
   								
-  								 <a><span className="glyph glyphicon glyphicon-remove-circle" title="Delete Your Hug" onClick={ this.deleteHugPost.bind(null, this.props.id) }></span></a>
+  								<a><span className="glyph glyphicon glyphicon-remove-circle" title="Delete Your Hug" onClick={ this.deleteHugPost.bind(null, this.props.id) }></span></a>
   								<img src={ userImage } className="img-thumbnail card-img-top img"  width="304" height="236"/>
     							<div className="card-block">
 
@@ -162,7 +167,7 @@ var HugCard = React.createClass({
     							<p className="card-text">{this.props.content}</p>
     							<p className="card-text"> When: {this.props.dayOfHug}</p>
     							<p className="card-text"><small className="text-muted">{this.props.duration}</small></p>  						
-  								<button onClick={ this.openModal.bind(null, this.props.id) }>Modal Button</button>	 
+  								<a onClick={ this.openModal.bind(null, this.props.id) } className="comment-glyph userIcon"><img src='img/comment.png'/></a>	 
 								{ this.modalDisplay() }
 								
 						
