@@ -5,8 +5,22 @@ var mongoose = require('mongoose');
 var passport = require('passport');
 var session = require('express-session');
 var flash = require('connect-flash');
-mongoose.connect('mongodb://localhost/hugApp');
 var port = process.env.PORT || 8000;
+
+
+ // mlab code for heroku
+var uriUtil = require('mongodb-uri');
+
+var options = {
+server:  { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } },
+replset: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } }
+};  
+var mongodbUri = process.env.MONGOLAB_URI || "mongodb://localhost/blogPosts";
+var mongooseUri = uriUtil.formatMongoose(mongodbUri);
+
+
+
+mongoose.connect(mongooseUri, options); 
 
 
 app.use(express.static('public'));
