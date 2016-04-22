@@ -36,8 +36,7 @@ const customStyles = {
     left              : 0,
     right             : 0,
     bottom            : 0,
-    backgroundColor   : 'grey',
-    overflow          : 'auto'	
+    backgroundColor   : 'grey',	
   }
 
 };
@@ -79,6 +78,7 @@ var HugCard = React.createClass({
           			onAfterOpen={this.afterOpenModal}
           			onRequestClose={this.closeModal}
           			style={customStyles} >
+          		<div className="scroller">	
           		<img src={ userImage } className="img-thumbnail"  width="304" height="236" />	
           		<h2 ref="avenir">{this.props.title}</h2>
           			<p className='avenir'> From @{ user }</p>
@@ -93,6 +93,7 @@ var HugCard = React.createClass({
 								activeUser={ this.state.activeUser }/>
 
           			<button onClick={this.closeModal}>close</button>
+          		</div>	
 				</Modal>
 			</div>
 			)

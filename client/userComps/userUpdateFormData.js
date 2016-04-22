@@ -43,7 +43,8 @@ var UserUpdateFormData = React.createClass({
 	handleUserFormSubmit: function(userInfo){
 		var self = this;
 		var id = this.props.user._id;
-
+		console.log("trying to call handleUserFormSubmit");
+		console.log(userInfo);
 		$.ajax({
 			url: '/api/user/' + id,
 			dataType: 'json',
@@ -52,6 +53,7 @@ var UserUpdateFormData = React.createClass({
 			success: function(data){
 				this.props.getCurrentUserFromServer();
 				this.props.loadHugsFromServer();
+
 			}.bind(this),
 			error: function(xhr, status, err){
 				console.error('/api/user/' + id, status, err.toString());
@@ -63,16 +65,13 @@ var UserUpdateFormData = React.createClass({
 
 	handleUserSubmit: function(e){
 		e.preventDefault();
-		var user={}
+		
 
-		user.username = this.state.username;
-		user.profileImage = this.state.profileImage;
+		var username = this.state.username.trim();
+		var profileImage = this.state.profileImage;
 
-		if(!user.username || !user.profileImage){
-			return;
-		}
 
-		this.handleUserFormSubmit(user);
+		this.handleUserFormSubmit({ username: username, profileImage: profileImage });
 		this.setState({ username: '', profileImage: ''});
 	},
 
