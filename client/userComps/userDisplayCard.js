@@ -25,11 +25,11 @@ var UserDisplayCard = React.createClass({
 		return (
 
 			<div className="container avenir">
-				<div className="col-lg-12">
-					<img src={this.props.user.local.profileImage } className="img-thumbnail"  width="304" height="236"/>
+				<div className="col-lg-3">
+					<img src={this.props.user.local.profileImage } className="img-thumbnail img"  width="304" height="236"/>
 				</div>
 				<div>
-				<h3> Welcome {this.props.user.local.username}!</h3>
+					<h3> Welcome {this.props.user.local.username}!</h3>
 				</div>
 			</div>
 			
