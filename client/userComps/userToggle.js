@@ -21,24 +21,36 @@ var React = require('react');
 function UserToggle(props){
 		return (
 
-			<div className="icons">
-				<div className="container col-lg-1 col-lg-offset-4">
-					<a onClick={ props.toggleActiveComp.bind(null,'userDisplay')} className="userIcon"><img src="img/user.png"/></a>
-						<p>Your User Display</p>
-					
-				</div>
-				<div className="container col-lg-1">
-					<a onClick={ props.toggleActiveComp.bind(null,'userUpdate')} className="userIcon" ><img src="img/tools.png"/></a>
-						<p>Update Your User Profile</p>
-					
-				</div>
-				<div className="container col-lg-1">
-					<a onClick={ props.toggleActiveComp.bind(null,'hugPost')} className="userIcon" ><img src="img/heart.png"/></a>
+
+			<div className="container icons">
+	  		<div className="row row-centered">
+	      	
+	      	<div className="col-xs-2 col-centered">
+	      		<a onClick={ props.toggleActiveComp.bind(null,'userDisplay')} className="userIcon"><img src="img/user.png"/></a>
+				
+	      	</div>
+	      	<div className="col-xs-2 col-centered">
+	      		<a onClick={ props.toggleActiveComp.bind(null,'userUpdate')} className="userIcon" ><img src="img/tools.png"/></a>
+		
+	      	</div>
+	      	<div className="col-xs-2 col-centered">
+	      		<a onClick={ props.toggleActiveComp.bind(null,'hugPost')} className="userIcon" ><img src="img/heart.png"/></a>
+
+	      	</div>
+	  		</div>
+	  		<div className="row row-centered">
+	  			<div className="col-xs-2 col-centered"> 
+						<p>User Display</p>
+	      	</div>
+	      	<div className="col-xs-2 col-centered">	      	
+						<p>Edit Profile</p>
+	      	</div>
+	      	<div className="col-xs-2 col-centered">
 						<p>Post a Hug</p>
-											
-				</div>
-			</div>
-			
+	      	</div>
+	  		</div>
+			</div>	
+
 			)
 	};
 
