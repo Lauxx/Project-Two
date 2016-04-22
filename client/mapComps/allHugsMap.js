@@ -56,13 +56,17 @@ var AllHugsMap = React.createClass({
           		onAfterOpen={this.afterOpenModal}
           		onRequestClose={this.closeModal}
           		style={customStyles} >
-          		<img src={ this.state.activeHug.user.local.profileImage } className="img-thumbnail"  width="304" height="236" />	
-          		<h2 ref="subtitle">{this.state.activeHug.title}</h2>
-          			<p> From @{ this.state.activeHug.user.local.username }</p>
-          			<p> Content: { this.state.activeHug.content }</p>
-          			<p> Date of hug: { this.state.activeHug.dayOfHug } </p>
-          			<p> { this.state.activeHug.duration } </p>
-          			<button onClick={this.closeModal}>close</button>
+          		<div className="col-lg-5">
+          			<img src={ this.state.activeHug.user.local.profileImage } className="img-thumbnail"  width="304" height="236" />	
+          		</div>
+          		<div className="col-lg-6">	
+          			<a><span className="glyph glyphicon glyphicon-remove-circle userIcon" title="Close" onClick={this.closeModal}></span></a>
+          			<h2 className='avenir underline'>{this.state.activeHug.title}</h2>
+          			<p className='avenir'> From @{ this.state.activeHug.user.local.username }</p>
+          			<p className='avenir'> Content: { this.state.activeHug.content }</p>
+          			<p className='avenir'> Date of hug: { this.state.activeHug.dayOfHug } </p>
+          			<p className='avenir'> { this.state.activeHug.duration } </p>
+          		</div>	
 				</Modal>
 			</div>
 			)

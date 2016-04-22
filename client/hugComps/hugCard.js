@@ -25,11 +25,10 @@ const customStyles = {
   content : {
     top                   : '50%',
     left                  : '50%',
-    right                 : 'auto',
-    bottom                : 0,
+    right                 : '50%',
+    bottom                : '-20%',
     marginRight           : '-50%',
     transform             : 'translate(-50%, -50%)',
-    
     		
   },
   overlay : {
@@ -37,7 +36,7 @@ const customStyles = {
     left              : 0,
     right             : 0,
     bottom            : 0,
-    backgroundColor   : 'grey',
+    backgroundColor   : '#ecf0f1',
 	
   },
   
@@ -78,26 +77,30 @@ var HugCard = React.createClass({
 		return (
 			<div>
 			<Modal
-					isOpen={this.state.modalIsOpen}
-          			onAfterOpen={this.afterOpenModal}
-          			onRequestClose={this.closeModal}
-          			style={customStyles} >
-          		<div className="">	
-          		<img src={ userImage } className="img-thumbnail"  width="250" height="250" />	
-          		<h2 ref="avenir">{this.props.title}</h2>
-          			<p className='avenir'> From @{ user }</p>
-          			<p className='avenir'> Content: { this.props.content }</p>
-          			<p className='avenir'> Date of hug: { this.props.dayOfHug } </p>
-          			<p className='avenir'> { this.props.duration } </p>
-          			{ commentForm } 
+				isOpen={this.state.modalIsOpen}
+          		onAfterOpen={this.afterOpenModal}
+          		onRequestClose={this.closeModal}
+          		style={customStyles} >
+          			<div className="col-lg-5">	
+          				<img src={ userImage } className="img-thumbnail img"  width="250" height="250" />
+          			</div>
+          			<div className="col-lg-7">
+          				<a><span className="glyph glyphicon glyphicon-remove-circle userIcon" title="Close" onClick={this.closeModal}></span></a>
+          					<h2 className="avenir underline">{this.props.title}</h2>
+          					<p className='avenir'> From @{ user }</p>
+          					<p className='avenir'> Content: { this.props.content }</p>
+          					<p className='avenir'> Date of hug: { this.props.dayOfHug } </p>
+          					<p className='avenir'> { this.props.duration } </p>
+          			</div>			
+          						{ commentForm } 
 
 							<CommentList 
 								comments={this.props.comments} 
 								loadHugsFromServer={this.props.loadHugsFromServer} 
 								activeUser={ this.state.activeUser }/>
 
-          			<button onClick={this.closeModal}>close</button>
-          		</div>	
+          			
+          			
 				</Modal>
 			</div>
 			)
@@ -105,26 +108,28 @@ var HugCard = React.createClass({
 			return (
 				<div>
 			<Modal
-					isOpen={this.state.modalIsOpen}
-          			onAfterOpen={this.afterOpenModal}
-          			onRequestClose={this.closeModal}
-          			style={customStyles} >
+				isOpen={this.state.modalIsOpen}
+          		onAfterOpen={this.afterOpenModal}
+          		onRequestClose={this.closeModal}
+          		style={customStyles} >
           		
-          		
-          		<img src={ userImage } className="img-thumbnail"  width="250" height="250" />	
-          		<h2 ref="subtitle">{this.props.title}</h2>
+          		<div className="col-lg-5">
+          			<img src={ userImage } className="img-thumbnail"  width="250" height="250" />
+          		</div>
+          		<div className="col-lg-7">	
+          			<a><span className="glyph glyphicon glyphicon-remove-circle userIcon" title="Close" onClick={this.closeModal}></span></a>	
+          			<h2 className='avenir underline'>{this.props.title}</h2>
           			<p> From @{ user }</p>
           			<p> Content: { this.props.content }</p>
           			<p> Date of hug: { this.props.dayOfHug } </p>
           			<p> { this.props.duration } </p>
+          		</div>	
           			{ commentForm } 
 
 							<CommentList 
 								comments={this.props.comments} 
 								loadHugsFromServer={this.props.loadHugsFromServer} 
 								activeUser={ this.state.activeUser }/>
-
-          			<button onClick={this.closeModal}>close</button>
           		
           			
 				</Modal>
@@ -168,15 +173,16 @@ var HugCard = React.createClass({
 		 if(this.props.user._id === loggedInUser ){
 			return (
 			<div className=''>
-				<div className="container hugCard col-lg-3 col-md-3">
+				<div className="container hugCard col-lg-4 col-md-3">
 					<div className="card">
 						<div className="avenir">
+  								<div className="col-lg-5 col-md-5">
   								
-  								<a><span className="glyph glyphicon glyphicon-remove-circle" title="Delete Your Hug" onClick={ this.deleteHugPost.bind(null, this.props.id) }></span></a>
   								<img src={ userImage } className="img-thumbnail card-img-top img"  width="200" height="200"/>
-    							<div className="card-block">
-
-    							<h4 className="card-title">{this.props.title} <small> from </small> @{user} </h4>
+    							</div>
+    							<div className="col-lg-7 col-md-7">
+    							<a><span className="glyph glyphicon glyphicon-remove-circle userIcon" title="Delete Your Hug" onClick={ this.deleteHugPost.bind(null, this.props.id) }></span></a>
+    							<h4 className="card-title underline">{this.props.title} <small> from </small> @{user} </h4>
     							<p className="card-text">{this.props.content}</p>
     							<p className="card-text"> When: {this.props.dayOfHug}</p>
     							<p className="card-text"><small className="text-muted">{this.props.duration}</small></p>  						
@@ -190,22 +196,50 @@ var HugCard = React.createClass({
 				</div>
 			</div>	
 			)
-		} else {
+		} else if(!loggedInUser){
 			return (
 				<div className=''>
-				<div className="container hugCard col-lg-3 col-md-3">
+				<div className="container hugCard col-lg-4 col-md-3">
 					<div className="card">
 						<div className="avenir">
-  								
+  								<div className="col-lg-5 col-md-5">
   								
   								<img src={ userImage } className="img-thumbnail card-img-top img"  width="200" height="200"/>
-    							<div className="card-block">
-
-    							<h4 className="card-title">{this.props.title} <small> from </small> @{user} </h4>
+    							</div>
+    							<div className="col-lg-7 col-md-7">
+    							
+    							<h4 className="card-title underline">{this.props.title} <small> from </small> @{user} </h4>
     							<p className="card-text">{this.props.content}</p>
     							<p className="card-text"> When: {this.props.dayOfHug}</p>
     							<p className="card-text"><small className="text-muted">{this.props.duration}</small></p>  						
-  								<a onClick={ this.openModal.bind(null, this.props.id) } className="comment-glyph userIcon"><img src='img/comment.png'/></a>	 
+  								
+								
+						
+  								</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+				)
+			
+		} else {
+			return (
+				<div className=''>
+				<div className="container hugCard col-lg-4 col-md-3">
+					<div className="card">
+						<div className="avenir">
+  								
+  								<div className="col-lg-5 col-md-5">
+  									<img src={ userImage } className="img-thumbnail card-img-top img userIcon"  width="200" height="200"/>
+    							</div>
+    							<div className="col-lg-7 col-md-7">
+
+    								<h4 className="card-title underline">{this.props.title} <small> from </small> @{user} </h4>
+    								<p className="card-text">{this.props.content}</p>
+    								<p className="card-text"> When: {this.props.dayOfHug}</p>
+    								<p className="card-text"><small className="text-muted">{this.props.duration}</small></p>  						
+  									<a onClick={ this.openModal.bind(null, this.props.id) } className="comment-glyph userIcon"><img src='img/comment.png'/></a>
 								{ this.modalDisplay() }
 								
 						
