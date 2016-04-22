@@ -28,9 +28,18 @@ const customStyles = {
     right                 : 'auto',
     bottom                : 'auto',
     marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)',
-    font 				  : 'avenir'			
+    transform             : 'translate(-50%, -50%)'
+    		
+  },
+  overlay : {
+    top               : 0,
+    left              : 0,
+    right             : 0,
+    bottom            : 0,
+    backgroundColor   : 'grey',
+    overflow          : 'auto'	
   }
+
 };
 
 var HugCard = React.createClass({
@@ -48,7 +57,7 @@ var HugCard = React.createClass({
 	},
 
 	afterOpenModal: function(){
-		this.refs.subtitle.style.color = '#f00'
+		this.refs.subtitle.style.color = 'black'
 	},
 
 	closeModal: function(){
@@ -71,11 +80,11 @@ var HugCard = React.createClass({
           			onRequestClose={this.closeModal}
           			style={customStyles} >
           		<img src={ userImage } className="img-thumbnail"  width="304" height="236" />	
-          		<h2 ref="subtitle">{this.props.title}</h2>
-          			<p> From @{ user }</p>
-          			<p> Content: { this.props.content }</p>
-          			<p> Date of hug: { this.props.dayOfHug } </p>
-          			<p> { this.props.duration } </p>
+          		<h2 ref="avenir">{this.props.title}</h2>
+          			<p className='avenir'> From @{ user }</p>
+          			<p className='avenir'> Content: { this.props.content }</p>
+          			<p className='avenir'> Date of hug: { this.props.dayOfHug } </p>
+          			<p className='avenir'> { this.props.duration } </p>
           			{ commentForm } 
 
 							<CommentList 
