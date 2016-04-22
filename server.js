@@ -8,6 +8,7 @@ var flash = require('connect-flash');
 mongoose.connect('mongodb://localhost/hugApp');
 var port = process.env.PORT || 8000;
 
+
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
