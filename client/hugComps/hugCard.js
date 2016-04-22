@@ -95,8 +95,8 @@ var HugCard = React.createClass({
           			onAfterOpen={this.afterOpenModal}
           			onRequestClose={this.closeModal}
           			style={customStyles} >
-          		<div className="myScroll" data-target="#commentScroll">
-          		<div id="commentScroll">	
+          		
+          		
           		<img src={ userImage } className="img-thumbnail"  width="304" height="236" />	
           		<h2 ref="subtitle">{this.props.title}</h2>
           			<p> From @{ user }</p>
@@ -111,8 +111,8 @@ var HugCard = React.createClass({
 								activeUser={ this.state.activeUser }/>
 
           			<button onClick={this.closeModal}>close</button>
-          			</div>
-          		</div>	
+          		
+          			
 				</Modal>
 			</div>
 				)
@@ -147,12 +147,11 @@ var HugCard = React.createClass({
 
 	render: function(){
 		
-		
+		var loggedInUser = this.state.activeUser && this.state.activeUser.local ? this.state.activeUser._id : loggedInUser;
 		var user = this.props.user && this.props.user.local ? this.props.user.local.username : 'no user';
-		
 		var userImage = this.props.user && this.props.user.local ? this.props.user.local.profileImage : null;
 
-		 
+		 if(this.props.user._id === loggedInUser ){
 			return (
 			<div className=''>
 				<div className="container hugCard col-lg-3 col-md-3">
@@ -177,7 +176,33 @@ var HugCard = React.createClass({
 				</div>
 			</div>	
 			)
-		
+		} else {
+			return (
+				<div className=''>
+				<div className="container hugCard col-lg-3 col-md-3">
+					<div className="card">
+						<div className="avenir">
+  								
+  								
+  								<img src={ userImage } className="img-thumbnail card-img-top img"  width="304" height="236"/>
+    							<div className="card-block">
+
+    							<h4 className="card-title">{this.props.title} <small> from </small> @{user} </h4>
+    							<p className="card-text">{this.props.content}</p>
+    							<p className="card-text"> When: {this.props.dayOfHug}</p>
+    							<p className="card-text"><small className="text-muted">{this.props.duration}</small></p>  						
+  								<a onClick={ this.openModal.bind(null, this.props.id) } className="comment-glyph userIcon"><img src='img/comment.png'/></a>	 
+								{ this.modalDisplay() }
+								
+						
+  								</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+				)
+		}
 	}
 });
 
