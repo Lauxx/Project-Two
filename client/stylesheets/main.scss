@@ -30,12 +30,11 @@
 	padding: 3%;
 	text-align: center;
 	font-family: Avenir;
-	
 }
 
 .userIcon{
 	cursor: pointer; 
-	cursor: hand;
+	
 }
 
 .avenir{
@@ -131,3 +130,20 @@ body{
 .ReactModal__Body--open {
   overflow: hidden;
 }
+
+a.dropdown-toggle.head {
+	padding-bottom: 35px;
+}
+
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display: inline-block;
+    float: none;
+    /* reset the text-align */
+    /* inline-block space fix */
+}
+
+
+
