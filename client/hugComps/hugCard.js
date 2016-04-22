@@ -26,9 +26,10 @@ const customStyles = {
     top                   : '50%',
     left                  : '50%',
     right                 : 'auto',
-    bottom                : 'auto',
+    bottom                : 0,
     marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)'
+    transform             : 'translate(-50%, -50%)',
+    
     		
   },
   overlay : {
@@ -36,8 +37,10 @@ const customStyles = {
     left              : 0,
     right             : 0,
     bottom            : 0,
-    backgroundColor   : 'grey',	
-  }
+    backgroundColor   : 'grey',
+	
+  },
+  
 
 };
 
@@ -51,8 +54,8 @@ var HugCard = React.createClass({
 	},
 
 	openModal: function(){
-		this.setState({ modalIsOpen: true })
-
+		this.setState({ modalIsOpen: true, originalBodyOverflow: document.body.style.overflow });
+		document.body.style.overflow = 'hidden';
 	},
 
 	afterOpenModal: function(){
@@ -60,7 +63,8 @@ var HugCard = React.createClass({
 	},
 
 	closeModal: function(){
-		this.setState({ modalIsOpen: false })
+		this.setState({ modalIsOpen: false });
+		document.body.style.overflow = this.state.originalBodyOverflow;
 	},
 
 	modalDisplay: function(){
@@ -78,8 +82,8 @@ var HugCard = React.createClass({
           			onAfterOpen={this.afterOpenModal}
           			onRequestClose={this.closeModal}
           			style={customStyles} >
-          		<div className="scroller">	
-          		<img src={ userImage } className="img-thumbnail"  width="304" height="236" />	
+          		<div className="">	
+          		<img src={ userImage } className="img-thumbnail"  width="250" height="250" />	
           		<h2 ref="avenir">{this.props.title}</h2>
           			<p className='avenir'> From @{ user }</p>
           			<p className='avenir'> Content: { this.props.content }</p>
@@ -107,7 +111,7 @@ var HugCard = React.createClass({
           			style={customStyles} >
           		
           		
-          		<img src={ userImage } className="img-thumbnail"  width="304" height="236" />	
+          		<img src={ userImage } className="img-thumbnail"  width="250" height="250" />	
           		<h2 ref="subtitle">{this.props.title}</h2>
           			<p> From @{ user }</p>
           			<p> Content: { this.props.content }</p>
@@ -169,7 +173,7 @@ var HugCard = React.createClass({
 						<div className="avenir">
   								
   								<a><span className="glyph glyphicon glyphicon-remove-circle" title="Delete Your Hug" onClick={ this.deleteHugPost.bind(null, this.props.id) }></span></a>
-  								<img src={ userImage } className="img-thumbnail card-img-top img"  width="304" height="236"/>
+  								<img src={ userImage } className="img-thumbnail card-img-top img"  width="200" height="200"/>
     							<div className="card-block">
 
     							<h4 className="card-title">{this.props.title} <small> from </small> @{user} </h4>
@@ -194,7 +198,7 @@ var HugCard = React.createClass({
 						<div className="avenir">
   								
   								
-  								<img src={ userImage } className="img-thumbnail card-img-top img"  width="304" height="236"/>
+  								<img src={ userImage } className="img-thumbnail card-img-top img"  width="200" height="200"/>
     							<div className="card-block">
 
     							<h4 className="card-title">{this.props.title} <small> from </small> @{user} </h4>
