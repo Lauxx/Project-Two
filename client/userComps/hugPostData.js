@@ -32,6 +32,9 @@ var HugPostData = React.createClass({
 		}
 	},
 
+	contextTypes: {
+		sendNotification: React.PropTypes.func.isRequired
+	},
 
 	handleMarkerMoved: function(lat, lng) {
 		this.setState({ lat: lat, lng: lng })
@@ -67,6 +70,7 @@ var HugPostData = React.createClass({
 			data: hug,
 			success: function(data){
 				this.props.loadHugsFromServer();
+				this.context.sendNotification('Posted hug successfully.');
 			}.bind(this),
 			error: function(xhr, status, err){
 				console.error('/api/hugs', status, err.toString())

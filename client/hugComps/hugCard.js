@@ -52,6 +52,10 @@ var HugCard = React.createClass({
 		}
 	},
 
+	contextTypes: {
+		sendNotification: React.PropTypes.func.isRequired
+	},
+
 	openModal: function(){
 		this.setState({ modalIsOpen: true, originalBodyOverflow: document.body.style.overflow });
 		document.body.style.overflow = 'hidden';
@@ -139,15 +143,14 @@ var HugCard = React.createClass({
 	},
 
 	deleteHugPost: function(){
-		if(confirm('Are you sure you want to delete?')){
 			var self = this;
 			$.ajax({
 				url: '/api/hugs/' + this.props.id,
 				method: 'DELETE'
 			}).done(function(){
 				self.props.loadHugsFromServer();
+				self.context.sendNotification('Hug deleted.');
 			})
-		}
 	},
 
 	getCurrentUserFromServer: function(){

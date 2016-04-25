@@ -27,6 +27,7 @@ var HugList = require('./hugComps/hugList');
 var AllHugsMap = require('./mapComps/allHugsMap');
 var UserApp = require('./userComps/userApp');
 var Intro = require('./userComps/Intro');
+var Notifier = require('./Notifier');
 require('./stylesheets/main.scss');
 
 var HugApp = React.createClass({
@@ -76,6 +77,7 @@ var HugApp = React.createClass({
     return (
 
       <div className="container col-lg-12">
+      <Notifier>
         <div className="row">
           <Intro user={ this.state.user } />
         </div>
@@ -86,6 +88,7 @@ var HugApp = React.createClass({
           <div className="row">
             <AllHugsMap hugArray={this.state.hugArray} />
           </div>
+          </Notifier>
         <Footer />
       </div>
       
