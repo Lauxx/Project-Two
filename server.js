@@ -97,9 +97,9 @@ app.get('/', function (req, res){
 });
 
 app.get('/huggApp', function (req, res){
-	var userr = req.user || " ";
-	console.log(userr, 'hello i am the user');
-	res.render('huggApp', {user: userr});
+	var user = req.user || " ";
+	console.log(user, 'hello i am the user');
+	res.render('huggApp', {user: user});
 });
 
 app.use('/api', userRouter);
