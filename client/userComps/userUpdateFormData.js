@@ -28,6 +28,9 @@ var UserUpdateFormData = React.createClass({
 		}
 	},
 
+	contextTypes: {
+		sendNotification: React.PropTypes.func.isRequired
+	},
 
 	handleUserNameChange: function(e){
 		this.setState({ username: e.target.value })
@@ -53,7 +56,7 @@ var UserUpdateFormData = React.createClass({
 			success: function(data){
 				this.props.getCurrentUserFromServer();
 				this.props.loadHugsFromServer();
-
+				this.context.sendNotification('User profile updated.');
 			}.bind(this),
 			error: function(xhr, status, err){
 				console.error('/api/user/' + id, status, err.toString());
