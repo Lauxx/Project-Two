@@ -18,7 +18,8 @@ replset: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } }
 var mongodbUri = process.env.MONGOLAB_URI || "mongodb://localhost/hugApp";
 var mongooseUri = uriUtil.formatMongoose(mongodbUri);
 
-
+console.log("mongodbUri=");
+console.log(mongodbUri);
 
 mongoose.connect(mongooseUri, options); 
 
