@@ -30,6 +30,11 @@ var UserDisplayCard = React.createClass({
 				</div>
 				<div>
 					<h3> Welcome {this.props.user.local.username}!</h3>
+					<p>HuggSocial is a community forum created to help others connect with the simplicity of hugs. 
+						 Hugging has been proven to reduce stress levels & increase the production of oxytocin in the brain 
+						 - leading to overall mental and emotional health benefits. The more oxytocin produced eventually 
+						 leads to better control under stressful situations. We encourage you to make your own post, 
+						 however feel free to check-in on our active huggers below and seek them out in our community.  Happy Hugging!</p>
 				</div>
 			</div>
 			
