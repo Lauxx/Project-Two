@@ -2,6 +2,15 @@
 	border: 1px solid black;
 }
 
+.loginForm{
+	background-color: black
+}
+
+.navBar{
+	color: white;
+	font-family: 'avenir';
+}
+
 .underline{
 	border-bottom: 1px solid black;
 }
@@ -98,8 +107,7 @@
 }
 
 .footer{
-	background-color: black;
-	font-family: "Optima";
+	font-family: "avenir";
 	color:white;
 	margin-bottom: 0;
 	max-height: 50px;	
@@ -145,5 +153,17 @@ a.dropdown-toggle.head {
     /* inline-block space fix */
 }
 
+.center {
+	text-align: center;
+}
+
+.intro {
+	font-size: 1.5em;
+}
+
+.introContainer {
+	margin-top: 4%;
+	margin-bottom: 4%;
+}
 
 
