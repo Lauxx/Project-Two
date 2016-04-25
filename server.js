@@ -20,7 +20,13 @@ var mongooseUri = uriUtil.formatMongoose(mongodbUri);
 
 
 
-mongoose.connect(mongooseUri, options); 
+mongoose.connect(mongooseUri, options, function(err, data){
+  if(err){
+    console.log('connection error', err)
+  } else {
+    console.log('connection', data)
+  }
+}); 
 
 
 app.use(express.static('public'));
