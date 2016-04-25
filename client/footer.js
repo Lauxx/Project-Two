@@ -24,9 +24,9 @@ var Footer = React.createClass({
 		return (
 
 		<div>
-			<div className="navbar footer navbar-fixed-bottom">
+			<div className="navbar footer navbar-inverse navbar-fixed-bottom">
 				<div className="container-fluid">
-					<p className="navbar-brand footer">HugSocial</p>
+					<p className="navbar-brand footer">HuggSocial</p>
 				</div>
 			</div>
 		</div>
