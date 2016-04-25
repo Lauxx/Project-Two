@@ -67,7 +67,7 @@ var UserUpdateFormData = React.createClass({
 		e.preventDefault();
 		
 
-		var username = this.state.username.trim();
+		var username = this.state.username;
 		var profileImage = this.state.profileImage;
 
 

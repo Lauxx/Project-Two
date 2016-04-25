@@ -172,8 +172,9 @@ var HugCard = React.createClass({
 
 		 if(this.props.user._id === loggedInUser ){
 			return (
-			<div className=''>
-				<div className="container hugCard col-lg-4 col-md-3">
+			
+
+				<div className="container hugCard col-lg-4 col-md-3 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
 					<div className="card">
 						<div className="avenir">
   								<div className="col-lg-5 col-md-5">
@@ -194,12 +195,13 @@ var HugCard = React.createClass({
 						</div>
 					</div>
 				</div>
-			</div>	
+				
 			)
+
 		} else if(!loggedInUser){
 			return (
-				<div className=''>
-				<div className="container hugCard col-lg-4 col-md-3">
+				
+				<div className="container hugCard col-lg-4 col-md-3 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
 					<div className="card">
 						<div className="avenir">
   								<div className="col-lg-5 col-md-5">
@@ -219,14 +221,14 @@ var HugCard = React.createClass({
 						</div>
 					</div>
 				</div>
-			</div>
+			
 
 				)
 			
 		} else {
 			return (
-				<div className=''>
-				<div className="container hugCard col-lg-4 col-md-3">
+				
+				<div className="container hugCard col-lg-4 col-md-3 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
 					<div className="card">
 						<div className="avenir">
   								
@@ -247,7 +249,7 @@ var HugCard = React.createClass({
 						</div>
 					</div>
 				</div>
-			</div>
+			
 
 				)
 		}
