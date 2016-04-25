@@ -23,24 +23,40 @@ var React = require('react');
 var MapLoader = require('./mapLoader');
 import { GoogleMap, Marker } from 'react-google-maps'
 
-function NewHugMap (props) {
-  const onMarkerMoved = props.onMarkerMoved;
 
-  return (
-    <MapLoader>
-      <GoogleMap
-        defaultZoom={14}
-        center={{lat: 46.8787, lng: -114.000}}
-      >
-        <Marker 
-          position={ props.value }
-          draggable={true}
-          onDragend={ (event) => onMarkerMoved(event.latLng.lat(), event.latLng.lng()) }
-          icon={'img/heart.png'} />
-      </GoogleMap>
-    </MapLoader>
-  )
-};
+class NewHugMap extends React.Component {
+  constructor (props){
+    super(props);
+    this.state = { center: {lat: 46.8787, lng: -114.000} }
+  }
+
+  render() {
+    const onMarkerMoved = this.props.onMarkerMoved;
+    const center = this.state.center;
+    return (
+      <MapLoader>
+        <GoogleMap
+          defaultZoom={14}
+          onCenterChanged={() => console.log('center changed')}
+          center={center}
+        >
+          <Marker 
+            position={ this.props.value }
+            draggable={true}
+            onDragend={ (event) => {
+              const lat = event.latLng.lat();
+              const lng = event.latLng.lng();
+              this.setState({
+                center: {lat, lng}
+              });
+              onMarkerMoved(lat, lng); 
+            }}
+            icon={'img/heart.png'} />
+        </GoogleMap>
+      </MapLoader>
+    )
+  }
+}
 
 NewHugMap.propTypes = {
   onMarkerMoved: React.PropTypes.func.isRequired
