@@ -1,4 +1,5 @@
 //  HugApp
+//     Notifier
 //     HomePage(Logo/Carousel/Quotes)
 //     UserApp
 //     UserToggle 
