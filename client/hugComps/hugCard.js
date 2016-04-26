@@ -95,9 +95,10 @@ var HugCard = React.createClass({
           				<a><span className="glyph glyphicon glyphicon-remove-circle userIcon" title="Close" onClick={this.closeModal}></span></a>
           					<h2 className="avenir underline">{this.props.title}</h2>
           					<p className='avenir'> From @{ user }</p>
-          					<p className='avenir'> Content: { this.props.content }</p>
+          					<p className='avenir'> { this.props.content }</p>
           					<p className='avenir'> Date of hug: { this.props.dayOfHug } </p>
           					<p className='avenir'> { this.props.duration } </p>
+          					<a className='avenir' href={'https://www.google.com/maps/dir/Current+Location/' + this.props.lat + ',' + this.props.lng }>Get Directions </a>
           			</div>			
           						{ commentForm } 
 
@@ -127,9 +128,10 @@ var HugCard = React.createClass({
           			<a><span className="glyph glyphicon glyphicon-remove-circle userIcon" title="Close" onClick={this.closeModal}></span></a>	
           			<h2 className='avenir underline'>{this.props.title}</h2>
           			<p> From @{ user }</p>
-          			<p> Content: { this.props.content }</p>
+          			<p> { this.props.content }</p>
           			<p> Date of hug: { this.props.dayOfHug } </p>
           			<p> { this.props.duration } </p>
+          			<a className='avenir' href={'https://www.google.com/maps/dir/Current+Location/' + this.props.lat + ',' + this.props.lng }>Get Directions </a>
           		</div>	
           			{ commentForm } 
 
@@ -194,7 +196,8 @@ var HugCard = React.createClass({
     							<h4 className="card-title underline">{this.props.title} <small> from </small> @{user} </h4>
     							<p className="card-text">{this.props.content}</p>
     							<p className="card-text"> When: {this.props.dayOfHug}</p>
-    							<p className="card-text"><small className="text-muted">{this.props.duration}</small></p>  						
+    							<p className="card-text"><small className="text-muted">{this.props.duration}</small></p>
+    							<a className='avenir' href={'https://www.google.com/maps/dir/Current+Location/' + this.props.lat + ',' + this.props.lng }>Get Directions </a>  						
   								<a onClick={ this.openModal.bind(null, this.props.id) } className="comment-glyph userIcon"><img src='img/comment.png'/></a>	 
 								{ this.modalDisplay() }
 								
@@ -222,7 +225,7 @@ var HugCard = React.createClass({
     							<p className="card-text">{this.props.content}</p>
     							<p className="card-text"> When: {this.props.dayOfHug}</p>
     							<p className="card-text"><small className="text-muted">{this.props.duration}</small></p>  						
-  								
+  								<a className='avenir' href={'https://www.google.com/maps/dir/Current+Location/' + this.props.lat + ',' + this.props.lng }>Get Directions </a>
 								
 						
   								</div>
@@ -250,6 +253,7 @@ var HugCard = React.createClass({
     								<p className="card-text"> When: {this.props.dayOfHug}</p>
     								<p className="card-text"><small className="text-muted">{this.props.duration}</small></p>  						
   									<a onClick={ this.openModal.bind(null, this.props.id) } className="comment-glyph userIcon"><img src='img/comment.png'/></a>
+									<a className='avenir' href={'https://www.google.com/maps/dir/Current+Location/' + this.props.lat + ',' + this.props.lng }>Get Directions </a>
 									{ this.modalDisplay() }
 								
 						

@@ -33,6 +33,8 @@ function HugList(props){
 					user = { item.user }
 					date = { item.date }
 					comments={ item.comments }
+					lat={ item.lat }
+					lng={ item.lng }
 					loadHugsFromServer={ props.loadHugsFromServer } />
 		})
 
