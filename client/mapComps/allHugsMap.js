@@ -75,6 +75,7 @@ var AllHugsMap = React.createClass({
 		}
 
 	},
+	
 
 	openModal: function(hug){
 		this.setState({ modalIsOpen: true, activeHug: hug })
