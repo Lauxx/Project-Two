@@ -29,7 +29,11 @@ router.route('/hugs')
 //this route will allow you to post a hug
 	.post(function(req, res){
 
-		var user_id = req.user ? req.user._id : "570ea44052aa641708ebb144";
+		if(!req.user){
+			res.status(500).send(err, "You must be logged in to post a hug.");
+			return;
+		}
+		
 
 		var hug = new Hug();
 
@@ -39,7 +43,7 @@ router.route('/hugs')
 		hug.dayOfHug = req.body.dayOfHug;
 		hug.lat = req.body.lat;
 		hug.lng = req.body.lng;
-		hug.user = user_id;
+		hug.user = req.user._id;
 
 		hug.save(function(err, hug){
 			if(err){
@@ -106,12 +110,17 @@ router.route('/hugs/:_id')
 
 router.route('/hugs/:_id/comments')
 	.post(function(req, res){
+
+		if(!req.user){
+			res.status(500).send(err, "You must be logged in to leave a comment.");
+			return;
+		}
 		
-		var user_id = req.user ? req.user._id : "570ea44052aa641708ebb144";
+		
 		var comment = new Comment();
 
 		comment.body = req.body.body;
-		comment.user = user_id;
+		comment.user = req.user._id;
 		comment.hug = req.params._id;
 
 		console.log(comment);
