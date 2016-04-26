@@ -70,6 +70,7 @@ var AllHugsMap = React.createClass({
 				</Modal>
 			</div>
 			)
+		
 		} else {
 			return null
 		}
