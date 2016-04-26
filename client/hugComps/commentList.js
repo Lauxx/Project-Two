@@ -48,10 +48,11 @@ var CommentList = React.createClass({
 						<div className="card">
   							<div className="card-block">
   								<img src='' />
+  								<a><span className="glyph glyphicon glyphicon-remove-circle userIcon" title="Delete Your Comment" onClick={self.deleteComment.bind(null, comm._id)}></span></a>
     							<h4 className="card-title">@{user}</h4>
     							<p className="card-text">{comm.body}</p>
     							<p className="card-text"><small class="text-muted">{comm.date.substr(0,10)}</small></p>
-    							<a className="btn btn-primary" onClick={self.deleteComment.bind(null, comm._id)}>Delete Comment</a>
+    							
   							</div>
 						</div>
 					</div>	
