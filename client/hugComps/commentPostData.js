@@ -27,6 +27,10 @@ var CommentPostData = React.createClass({
 		}
 	},
 
+	contextTypes: {
+		sendNotification: React.PropTypes.func.isRequired
+	},
+
 
 	handleBodyChange: function(e){
 		this.setState({body: e.target.value})
@@ -40,6 +44,7 @@ var CommentPostData = React.createClass({
 			data: comment,
 			success: function(data){
 				this.props.loadHugsFromServer();
+				this.context.sendNotification('You posted a comment.');
 			}.bind(this),
 			error: function(xhr, status, err){
 				console.error('/api/hugs/' + this.props.id + '/comments', status, err.toString());

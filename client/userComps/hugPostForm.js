@@ -53,7 +53,7 @@ var HugPostForm = React.createClass({
 					<h4> Drag the marker to your Hug location </h4>
 					<NewHugsMap onMarkerMoved={ this.props.handleMarkerMoved } value={ {lat: this.props.lat, lng: this.props.lng} }/>
 						<br/><br/>
-					<button type="submit" className="btn btn-primary">Post Your Hug</button>
+					<button type="submit" className="btn btn-default post-button">Post Your Hug</button>
 				</form>
 			</div>
 			
