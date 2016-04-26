@@ -77,7 +77,6 @@ var HugCard = React.createClass({
 		var commentForm = this.state.activeUser ? <CommentPostData id={this.props.id} loadHugsFromServer={this.props.loadHugsFromServer} user={this.props.user}/> : null;
 		var loggedInUser = this.state.activeUser && this.state.activeUser.local ? this.state.activeUser._id : loggedInUser;
 		
-		console.log(this.props.user, loggedInUser, 'this is logged in user');
 
 	if(this.props.user._id === loggedInUser ){
 
@@ -178,7 +177,6 @@ var HugCard = React.createClass({
 		var user = this.props.user && this.props.user.local ? this.props.user.local.username : 'no user';
 		var userImage = this.props.user && this.props.user.local ? this.props.user.local.profileImage : null;
 
-		console.log(this.props.user, loggedInUser, 'THIS IS HUG CARD USER');
 
 		 if(this.props.user._id === loggedInUser ){
 			return (

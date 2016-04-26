@@ -24,7 +24,8 @@ var HugCard = require('./hugCard');
 function HugList(props){
 	var hugs = props.hugArray.map(function(item){
 		
-		return <HugCard 
+		return <HugCard
+					key= { item._id } 
 					id = { item._id }
 					title = { item.title }
 					content = { item.content }
