@@ -22,7 +22,6 @@ var NewHugsMap = require('../mapComps/newHugMap');
 var HugPostForm = React.createClass({
 
 
-
 	render: function (){
 		return (
 

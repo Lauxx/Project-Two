@@ -65,7 +65,7 @@ var AllHugsMap = React.createClass({
           			<p className='avenir'> Content: { this.state.activeHug.content }</p>
           			<p className='avenir'> Date of hug: { this.state.activeHug.dayOfHug } </p>
           			<p className='avenir'> { this.state.activeHug.duration } </p>
-          			
+          			<a href={'https://www.google.com/maps/dir/Current+Location/' + this.state.activeHug.lat + ',' + this.state.activeHug.lng }>Get Directions </a>
           		</div>	
 				</Modal>
 			</div>
