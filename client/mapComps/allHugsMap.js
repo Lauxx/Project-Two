@@ -46,8 +46,7 @@ var AllHugsMap = React.createClass({
 	},
 
 	modalDisplay: function(){
-
-
+		
 		if(this.state.activeHug){
 			console.log(this.state.activeHug);
 		return (
@@ -67,15 +66,18 @@ var AllHugsMap = React.createClass({
           			<p className='avenir'> Content: { this.state.activeHug.content }</p>
           			<p className='avenir'> Date of hug: { this.state.activeHug.dayOfHug } </p>
           			<p className='avenir'> { this.state.activeHug.duration } </p>
+          			<a className='avenir' href={'https://www.google.com/maps/dir/Current+Location/' + this.state.activeHug.lat + ',' + this.state.activeHug.lng }>Get Directions </a>
           		</div>	
 				</Modal>
 			</div>
 			)
+		
 		} else {
 			return null
 		}
 
 	},
+	
 
 	openModal: function(hug){
 		this.setState({ modalIsOpen: true, activeHug: hug })

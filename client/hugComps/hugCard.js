@@ -246,7 +246,7 @@ var HugCard = React.createClass({
     								<p className="card-text"> When: {this.props.dayOfHug}</p>
     								<p className="card-text"><small className="text-muted">{this.props.duration}</small></p>  						
   									<a onClick={ this.openModal.bind(null, this.props.id) } className="comment-glyph userIcon"><img src='img/comment.png'/></a>
-								{ this.modalDisplay() }
+									{ this.modalDisplay() }
 								
 						
   								</div>
