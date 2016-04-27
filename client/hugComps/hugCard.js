@@ -182,7 +182,7 @@ var HugCard = React.createClass({
 			return (
 			
 
-				<div className="well hugCard col-lg-4 col-md-3 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 hugList">
+				<div className="well hugCard col-lg-4 col-md-3 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 ">
 					<div className="card">
 						<div className="avenir">
   								<div className="col-lg-5 col-md-5">
@@ -195,7 +195,7 @@ var HugCard = React.createClass({
     							<p className="card-text">{this.props.content}</p>
     							<p className="card-text"> When: {this.props.dayOfHug}</p>
     							<p className="card-text"><small className="text-muted">{this.props.duration}</small></p>
-    							<a className='avenir' href={'https://www.google.com/maps/dir/Current+Location/' + this.props.lat + ',' + this.props.lng }>Get Directions </a>  						
+    							<a className='avenir post-button' href={'https://www.google.com/maps/dir/Current+Location/' + this.props.lat + ',' + this.props.lng }>Get Directions </a>  						
   								<a onClick={ this.openModal.bind(null, this.props.id) } className="comment-glyph userIcon"><img src='img/comment.png'/></a>	 
 								{ this.modalDisplay() }
 								
@@ -210,7 +210,7 @@ var HugCard = React.createClass({
 		} else if(!loggedInUser){
 			return (
 			
-				<div className="well hugCard col-lg-4 col-md-3 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 hugList">
+				<div className="well hugCard col-lg-4 col-md-3 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 ">
 					<div className="card">
 						<div className="avenir">
   								<div className="col-lg-5 col-md-5">
@@ -237,7 +237,7 @@ var HugCard = React.createClass({
 		} else {
 			return (
 				
-				<div className="well hugCard col-lg-4 col-md-3 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 hugList">
+				<div className="well hugCard col-lg-4 col-md-3 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
 					<div className="card">
 						<div className="avenir">
   								
@@ -251,7 +251,7 @@ var HugCard = React.createClass({
     								<p className="card-text"> When: {this.props.dayOfHug}</p>
     								<p className="card-text"><small className="text-muted">{this.props.duration}</small></p>  						
   									<a onClick={ this.openModal.bind(null, this.props.id) } className="comment-glyph userIcon"><img src='img/comment.png'/></a>
-									<a className='avenir' href={'https://www.google.com/maps/dir/Current+Location/' + this.props.lat + ',' + this.props.lng }>Get Directions </a>
+									<a className='avenir post-button' href={'https://www.google.com/maps/dir/Current+Location/' + this.props.lat + ',' + this.props.lng }>Get Directions </a>
 									{ this.modalDisplay() }
 								
 						
