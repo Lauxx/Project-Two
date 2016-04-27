@@ -177,8 +177,8 @@ var HugCard = React.createClass({
 		var user = this.props.user && this.props.user.local ? this.props.user.local.username : 'no user';
 		var userImage = this.props.user && this.props.user.local ? this.props.user.local.profileImage : null;
 
-		console.log(user, 'hug card user here');
-		 if(user._id === loggedInUser ){
+		console.log(this.props.user, 'hug card user here', this.props.title);
+		 if(this.props.user && this.props.user._id === loggedInUser ){
 			return (
 			
 
