@@ -97,8 +97,9 @@ var HugCard = React.createClass({
           					<p className='avenir'> { this.props.content }</p>
           					<p className='avenir'> Date of hug: { this.props.dayOfHug } </p>
           					<p className='avenir'> { this.props.duration } </p>
-          					<a className='avenir' href={'https://www.google.com/maps/dir/Current+Location/' + this.props.lat + ',' + this.props.lng }>Get Directions </a>
-          			</div>			
+          					<a className='avenir post-button' href={'https://www.google.com/maps/dir/Current+Location/' + this.props.lat + ',' + this.props.lng }>Get Directions </a>
+          			</div>	
+          					
           						{ commentForm } 
 
 							<CommentList 
@@ -130,7 +131,7 @@ var HugCard = React.createClass({
           			<p> { this.props.content }</p>
           			<p> Date of hug: { this.props.dayOfHug } </p>
           			<p> { this.props.duration } </p>
-          			<a className='avenir' href={'https://www.google.com/maps/dir/Current+Location/' + this.props.lat + ',' + this.props.lng }>Get Directions </a>
+          			<a className='avenir post-button' href={'https://www.google.com/maps/dir/Current+Location/' + this.props.lat + ',' + this.props.lng }>Get Directions </a>
           		</div>	
           			{ commentForm } 
 
