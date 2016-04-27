@@ -195,7 +195,7 @@ var HugCard = React.createClass({
     							<p className="card-text">{this.props.content}</p>
     							<p className="card-text"> When: {this.props.dayOfHug}</p>
     							<p className="card-text"><small className="text-muted">{this.props.duration}</small></p>
-    							<a className='avenir' href={'https://www.google.com/maps/dir/Current+Location/' + this.props.lat + ',' + this.props.lng }>Get Directions </a>  						
+    							<a className='avenir post-button' href={'https://www.google.com/maps/dir/Current+Location/' + this.props.lat + ',' + this.props.lng }>Get Directions </a>  						
   								<a onClick={ this.openModal.bind(null, this.props.id) } className="comment-glyph userIcon"><img src='img/comment.png'/></a>	 
 								{ this.modalDisplay() }
 								
@@ -223,7 +223,7 @@ var HugCard = React.createClass({
     							<p className="card-text">{this.props.content}</p>
     							<p className="card-text"> When: {this.props.dayOfHug}</p>
     							<p className="card-text"><small className="text-muted">{this.props.duration}</small></p>  						
-  								<a className='avenir' href={'https://www.google.com/maps/dir/Current+Location/' + this.props.lat + ',' + this.props.lng }>Get Directions </a>
+  								<a className='avenir post-button' href={'https://www.google.com/maps/dir/Current+Location/' + this.props.lat + ',' + this.props.lng }>Get Directions </a>
 								
 						
   								</div>
@@ -251,7 +251,7 @@ var HugCard = React.createClass({
     								<p className="card-text"> When: {this.props.dayOfHug}</p>
     								<p className="card-text"><small className="text-muted">{this.props.duration}</small></p>  						
   									<a onClick={ this.openModal.bind(null, this.props.id) } className="comment-glyph userIcon"><img src='img/comment.png'/></a>
-									<a className='avenir' href={'https://www.google.com/maps/dir/Current+Location/' + this.props.lat + ',' + this.props.lng }>Get Directions </a>
+									<a className='avenir post-button' href={'https://www.google.com/maps/dir/Current+Location/' + this.props.lat + ',' + this.props.lng }>Get Directions </a>
 									{ this.modalDisplay() }
 								
 						
