@@ -4,7 +4,6 @@ var Intro = React.createClass({
 
 	render: function(){
 		window.loggedInUser = this.props.user && this.props.user.local ? this.props.user._id : null;
-		console.log(loggedInUser);
 		if(!loggedInUser){
 			return (
 			<div className="container avenir introContainer">
