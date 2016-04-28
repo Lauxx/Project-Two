@@ -43,11 +43,11 @@ var CommentList = React.createClass({
 		var self = this;
 		var loggedInUser = this.props.activeUser && this.props.activeUser.local ? this.props.activeUser._id : loggedInUser;
 		var comments = this.props.comments.map(function(comm){
-			var user = comm.user && comm.user.local ? comm.user.local.username : 'no user';
-
-			if (comm.user._id === loggedInUser){
+		var user = comm.user && comm.user.local ? comm.user.local.username : 'no user';
+			console.log(comm.user, 'comment list here line 46');
+			if (comm.user && comm.user._id === loggedInUser){
 				return (
-
+				
 				<div>
 					<div className="container col-xs-10 col-xs-offset-1 avenir">
 						<a><span className="glyph glyphicon glyphicon-remove-circle userIcon" title="Delete Your Comment" onClick={self.deleteComment.bind(null, comm._id)}></span></a>
