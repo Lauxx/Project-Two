@@ -21,16 +21,20 @@ var React = require('react');
 
 var CommentList = React.createClass({
 
+	contextTypes: {
+		sendNotification: React.PropTypes.func.isRequired
+	},
+
 	deleteComment: function(id){
-		if(confirm('Are you sure you want to delete your comment?')){
 			var self = this;
 			$.ajax({
 				url: '/api/hugs/comment/' + id,
 				method: 'DELETE'
 			}).done(function(){
 				self.props.loadHugsFromServer();
+				self.context.sendNotification("Comment deleted.");
 			})
-		}
+		
 	},
 
 
@@ -45,14 +49,15 @@ var CommentList = React.createClass({
 				return (
 
 				<div>
-					<div className="container col-xs-12">
+					<div className="container col-xs-10 col-xs-offset-1 avenir">
+						<a><span className="glyph glyphicon glyphicon-remove-circle userIcon" title="Delete Your Comment" onClick={self.deleteComment.bind(null, comm._id)}></span></a>
 						<div className="card">
   							<div className="card-block">
   								<img src='' />
-    							<h4 className="card-title">@{user}</h4>
+    							<h4 className="card-title underline">@{user}</h4>
     							<p className="card-text">{comm.body}</p>
-    							<p className="card-text"><small class="text-muted">{comm.date.substr(0,10)}</small></p>
-    							<a className="btn btn-primary" onClick={self.deleteComment.bind(null, comm._id)}>Delete Comment</a>
+    							<p className="card-text post-button"><small class="text-muted">{comm.date.substr(0,10)}</small></p>
+    							
   							</div>
 						</div>
 					</div>	
@@ -65,13 +70,13 @@ var CommentList = React.createClass({
 				return (
 
 				<div>
-					<div className="container col-xs-12">
+					<div className="container col-xs-10 col-xs-offset-1 avenir">
 						<div className="card">
   							<div className="card-block">
   								<img src='' />
-    							<h4 className="card-title">@{user}</h4>
+    							<h4 className="card-title underline">@{user}</h4>
     							<p className="card-text">{comm.body}</p>
-    							<p className="card-text"><small class="text-muted">{comm.date.substr(0,10)}</small></p>
+    							<p className="card-text post-button"><small class="text-muted">{comm.date.substr(0,10)}</small></p>
     						</div>
 						</div>
 					</div>	

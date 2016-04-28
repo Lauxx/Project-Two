@@ -48,7 +48,6 @@ var AllHugsMap = React.createClass({
 	modalDisplay: function(){
 		
 		if(this.state.activeHug){
-			console.log(this.state.activeHug);
 		return (
 			<div>
 			<Modal
@@ -94,7 +93,7 @@ var AllHugsMap = React.createClass({
 
 	render: function(){
 
-		console.log(this.props.hugArray);
+		
 		var self = this;
 		var allHugs = this.props.hugArray.map(function(hug){
 			return <Marker position={ {lat: hug.lat, lng: hug.lng} } onClick={ self.openModal.bind(null, hug) } icon={'img/heart.png'} />
